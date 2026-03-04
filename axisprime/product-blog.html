@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Publishing Architectures | AxisPrime</title>
+    <meta name="description"
+        content="High-traffic content management systems decoupled from the rendering layer for instant typography delivery.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./scripts.js" defer></script>
+</head>
+
+<body>
+
+    <!-- GLOBAL HEADER (NEW LOGO) -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="./index.html" class="brand-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+                <svg class="brand-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="width: 42px; height: 42px; overflow: visible;">
+                    <defs>
+                        <linearGradient id="logoGradPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#3b82f6" />
+                            <stop offset="100%" stop-color="#8b5cf6" />
+                        </linearGradient>
+                        <linearGradient id="logoGradSecondary" x1="100%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#1e3a8a" />
+                            <stop offset="100%" stop-color="#4c1d95" />
+                        </linearGradient>
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    <path d="M50 5 C 85 5, 95 40, 50 95 C 5 40, 15 5, 50 5 Z" fill="none"
+                        stroke="url(#logoGradSecondary)" stroke-width="3" opacity="0.5" />
+                    <path d="M50 15 C 75 15, 85 45, 50 85 C 15 45, 25 15, 50 15 Z" fill="none"
+                        stroke="url(#logoGradPrimary)" stroke-width="1.5" opacity="0.8" />
+                    <path d="M50 20 L80 80 L65 80 L50 45 L35 80 L20 80 Z" fill="url(#logoGradPrimary)"
+                        filter="url(#glow)" />
+                    <path d="M42 62 L58 62 L53 72 L47 72 Z" fill="#ffffff" opacity="0.9" />
+                    <circle cx="50" cy="35" r="4" fill="#ffffff" filter="url(#glow)" />
+                </svg>
+                <span
+                    style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em;">AXISPRIME</span>
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" style="color: var(--color-secondary);">Product <svg width="12"
+                                height="12" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                            </svg></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-section">
+                                <h4>Business</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="./product-ecommerce.html" class="mega-link">eCommerce</a></li>
+                                    <li><a href="./product-blog.html" class="mega-link"
+                                            style="color: var(--color-secondary);">Blog Publishing</a></li>
+                                    <li><a href="./product-portfolio.html" class="mega-link">Portfolio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="./contact.html" class="btn btn-primary"
+                    style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); border: none;">Book Infrastructure
+                    Call</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero"
+            style="min-height: 85vh; display: flex; align-items: center; justify-content: center; position: relative;">
+            <div
+                style="position: absolute; top: 0%; right: -5%; width: 50vw; height: 50vw; max-width: 600px; max-height: 600px; background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 60%); z-index: -1;">
+            </div>
+
+            <div class="container text-center">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <span class="badge"
+                        style="background: rgba(99, 102, 241, 0.15); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3); margin-bottom: 1.5rem;">CONTENT
+                        DELIVERY NETWORKS</span>
+                    <h1
+                        style="font-size: clamp(3rem, 5vw, 5.5rem); margin-bottom: 1.5rem; line-height: 1.05; letter-spacing: -0.02em; font-family: 'Outfit', sans-serif;">
+                        Publishing engines that rank instantly.
+                    </h1>
+                    <p class="lead"
+                        style="margin-bottom: 3rem; font-size: 1.35rem; color: var(--color-gray-300); line-height: 1.6;">
+                        Wordpress is slow, vulnerable, and bloated with plugin conflicts. We utilize Markdown and
+                        Headless CMS integrations to generate static HTML that scores 100/100 on Google Lighthouse.
+                    </p>
+
+                    <div style="display: flex; gap: 1rem; align-items: center; justify-content: center;">
+                        <a href="./contact.html" class="btn btn-primary"
+                            style="font-size: 1.15rem; padding: 1.2rem 2.5rem; background: linear-gradient(135deg, #6366f1, #4338ca); border: none; box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.5);">Commission
+                            Migration</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition Grid -->
+        <section class="section section-dark" style="border-top: 1px solid rgba(255,255,255,0.05);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 4rem;">
+                    <h2>Content is Data. Design is Code.</h2>
+                    <p style="color: var(--color-gray-400); max-width: 700px; margin: 0 auto; font-size: 1.1rem;">We
+                        firmly separate the act of writing from the act of rendering. Authors write in elegant headless
+                        interfaces; the system automatically builds hyper-optimized pages.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; border-radius: var(--border-radius-lg);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" style="color: #60a5fa; margin-bottom: 1.5rem;">
+                            <path fill="currentColor"
+                                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z" />
+                        </svg>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">MDX Component Integration</h3>
+                        <p style="color: var(--color-gray-400); line-height: 1.6;">Write in Markdown, but embed
+                            interactive React components directly into your blog posts. Render live data charts,
+                            newsletter forms, and payment tiers mid-paragraph.</p>
+                    </div>
+
+                    <div
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; border-radius: var(--border-radius-lg);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" style="color: #6366f1; margin-bottom: 1.5rem;">
+                            <path fill="currentColor"
+                                d="M11 2v20c-5.07-.5-9-4.79-9-10s3.93-9.5 9-10zm2 0v8.99L20.5 8c-1.39-3.41-4.63-5.83-8.5-6zm0 20c3.87-.17 7.11-2.59 8.5-6L13 13.01V22z" />
+                        </svg>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Algorithmic SEO</h3>
+                        <p style="color: var(--color-gray-400); line-height: 1.6;">Every article generates
+                            mathematically perfect OpenGraph tags, JSON-LD schema data, dynamic XML sitemaps, and
+                            optimized next-gen WebP image renditions.</p>
+                    </div>
+
+                    <div
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; border-radius: var(--border-radius-lg);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" style="color: #34d399; margin-bottom: 1.5rem;">
+                            <path fill="currentColor"
+                                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+                        </svg>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Global Edge Distribution</h3>
+                        <p style="color: var(--color-gray-400); line-height: 1.6;">Your typography and article content
+                            is pre-compiled into static files and pushed instantly to CDN nodes worldwide. Loading
+                            10,000 word essays occurs in under 200ms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER (NEW LOGO) -->
+    <footer class="site-footer" style="background: #000000; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container container-sm">
+            <div class="footer-top">
+                <div class="footer-col footer-brand">
+                    <a href="./index.html" class="brand-logo"
+                        style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+                        <svg class="brand-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            style="width: 36px; height: 36px; overflow: visible;">
+                            <defs>
+                                <linearGradient id="logoGradPrimaryF" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#3b82f6" />
+                                    <stop offset="100%" stop-color="#8b5cf6" />
+                                </linearGradient>
+                                <linearGradient id="logoGradSecondaryF" x1="100%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="0%" stop-color="#1e3a8a" />
+                                    <stop offset="100%" stop-color="#4c1d95" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M50 5 C 85 5, 95 40, 50 95 C 5 40, 15 5, 50 5 Z" fill="none"
+                                stroke="url(#logoGradSecondaryF)" stroke-width="3" opacity="0.5" />
+                            <path d="M50 15 C 75 15, 85 45, 50 85 C 15 45, 25 15, 50 15 Z" fill="none"
+                                stroke="url(#logoGradPrimaryF)" stroke-width="1.5" opacity="0.8" />
+                            <path d="M50 20 L80 80 L65 80 L50 45 L35 80 L20 80 Z" fill="url(#logoGradPrimaryF)" />
+                            <path d="M42 62 L58 62 L53 72 L47 72 Z" fill="#ffffff" opacity="0.9" />
+                            <circle cx="50" cy="35" r="4" fill="#ffffff" />
+                        </svg>
+                        <span
+                            style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em;">AXISPRIME</span>
+                    </a>
+                    <p class="footer-desc" style="color: var(--color-gray-500); font-size: 0.95rem;">Engineering the
+                        future of enterprise digital infrastructure. We eliminate templates and deploy raw performance.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="border-top-color: rgba(255,255,255,0.05); padding-top: 2rem;">
+                <div class="copyright" style="color: var(--color-gray-600); font-size: 0.85rem;">&copy; 2026 AXISPRIME
+                    TECHNOLOGIES. ALL RIGHTS RESERVED.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

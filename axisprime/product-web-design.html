@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Website Design | AxisPrime</title>
+    <meta name="description"
+        content="Custom web architectures tailored for scale. We abandon drag-and-drop builders in favor of bespoke React, Next.js, and raw CSS implementations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./scripts.js" defer></script>
+</head>
+
+<body>
+
+    <!-- GLOBAL HEADER (NEW LOGO) -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="./index.html" class="brand-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+                <svg class="brand-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="width: 42px; height: 42px; overflow: visible;">
+                    <defs>
+                        <linearGradient id="logoGradPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#3b82f6" />
+                            <stop offset="100%" stop-color="#8b5cf6" />
+                        </linearGradient>
+                        <linearGradient id="logoGradSecondary" x1="100%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#1e3a8a" />
+                            <stop offset="100%" stop-color="#4c1d95" />
+                        </linearGradient>
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    <path d="M50 5 C 85 5, 95 40, 50 95 C 5 40, 15 5, 50 5 Z" fill="none"
+                        stroke="url(#logoGradSecondary)" stroke-width="3" opacity="0.5" />
+                    <path d="M50 15 C 75 15, 85 45, 50 85 C 15 45, 25 15, 50 15 Z" fill="none"
+                        stroke="url(#logoGradPrimary)" stroke-width="1.5" opacity="0.8" />
+                    <path d="M50 20 L80 80 L65 80 L50 45 L35 80 L20 80 Z" fill="url(#logoGradPrimary)"
+                        filter="url(#glow)" />
+                    <path d="M42 62 L58 62 L53 72 L47 72 Z" fill="#ffffff" opacity="0.9" />
+                    <circle cx="50" cy="35" r="4" fill="#ffffff" filter="url(#glow)" />
+                </svg>
+                <span
+                    style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em;">AXISPRIME</span>
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" style="color: var(--color-secondary);">Product <svg width="12"
+                                height="12" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                            </svg></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-section">
+                                <h4>Creation</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="./product-web-design.html" class="mega-link"
+                                            style="color: var(--color-secondary);">Website design</a></li>
+                                    <li><a href="./product-templates.html" class="mega-link">Website templates</a></li>
+                                    <li><a href="./product-ai-builder.html" class="mega-link">AI website builder</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-section">
+                                <h4>Business</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="./product-ecommerce.html" class="mega-link">eCommerce</a></li>
+                                    <li><a href="./product-scheduling.html" class="mega-link">Scheduling</a></li>
+                                    <li><a href="./product-restaurant.html" class="mega-link">Restaurant</a></li>
+                                    <li><a href="./product-blog.html" class="mega-link">Blog</a></li>
+                                    <li><a href="./product-portfolio.html" class="mega-link">Portfolio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Solutions <svg width="12" height="12" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                            </svg></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-section">
+                                <h4>Management</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="./solution-payments.html" class="mega-link">Payment solutions</a></li>
+                                    <li><a href="./solution-mobile-app.html" class="mega-link">Mobile app</a></li>
+                                    <li><a href="./solution-all-business.html" class="mega-link">All business
+                                            features</a></li>
+                                    <li><a href="./solution-crm.html" class="mega-link">CRM system</a></li>
+                                    <li><a href="./solution-analytics.html" class="mega-link">Website analytics</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-section">
+                                <h4>Growth</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="./solution-email-marketing.html" class="mega-link">Email marketing</a>
+                                    </li>
+                                    <li><a href="./solution-seo.html" class="mega-link">SEO tools</a></li>
+                                    <li><a href="./solution-all-marketing.html" class="mega-link">All marketing
+                                            features</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Resources <svg width="12" height="12" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                            </svg></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-section">
+                                <h4>Explore</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="./blog.html" class="mega-link">AxisPrime Blog</a></li>
+                                    <li><a href="./resource-ai-features.html" class="mega-link">AI features</a></li>
+                                    <li><a href="./resource-inspiration.html" class="mega-link">Web design
+                                            inspiration</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-section">
+                                <h4>Support & Tools</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="./resource-help-center.html" class="mega-link">Help Center</a></li>
+                                    <li><a href="./resource-hire-professional.html" class="mega-link">Hire a
+                                            professional</a></li>
+                                    <li><a href="./resource-logo-maker.html" class="mega-link">Logo Maker</a></li>
+                                    <li><a href="./resource-name-generator.html" class="mega-link">Business Name
+                                            Generator</a></li>
+                                    <li><a href="./resource-free-tools.html" class="mega-link">Free business tools</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="./login.html" class="nav-link">Client Portal</a>
+                <a href="./contact.html" class="btn btn-primary"
+                    style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); border: none;">Architect Your
+                    Vision</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero"
+            style="min-height: 85vh; display: flex; align-items: center; justify-content: center; position: relative;">
+            <div
+                style="position: absolute; top: -10%; right: -5%; width: 50vw; height: 50vw; max-width: 600px; max-height: 600px; background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 60%); z-index: -1;">
+            </div>
+
+            <div class="container text-center">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <span class="badge"
+                        style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); margin-bottom: 1.5rem;">BESPOKE
+                        UI/UX ENGINEERING</span>
+                    <h1
+                        style="font-size: clamp(3rem, 5vw, 5.5rem); margin-bottom: 1.5rem; line-height: 1.05; letter-spacing: -0.02em; font-family: 'Outfit', sans-serif;">
+                        Design aesthetics that dictate market dominance.
+                    </h1>
+                    <p class="lead"
+                        style="margin-bottom: 3rem; font-size: 1.35rem; color: var(--color-gray-300); line-height: 1.6;">
+                        Your digital platform is your primary corporate asset. We discard off-the-shelf templates and
+                        architect entirely custom, glassmorphic, micro-animated user interfaces that convert at
+                        devastatingly high rates.
+                    </p>
+
+                    <div style="display: flex; gap: 1rem; align-items: center; justify-content: center;">
+                        <a href="./contact.html" class="btn btn-primary"
+                            style="font-size: 1.15rem; padding: 1.2rem 2.5rem; background: linear-gradient(135deg, #10b981, #059669); border: none; box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.5);">Commission
+                            a Redesign</a>
+                        <a href="./our-work.html" class="btn btn-outline"
+                            style="font-size: 1.15rem; padding: 1.1rem 2.5rem; border-color: rgba(255,255,255,0.2); color: white;">View
+                            Our Interfaces</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition Grid -->
+        <section class="section section-dark" style="border-top: 1px solid rgba(255,255,255,0.05);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 4rem;">
+                    <h2> Beyond basic wireframes.</h2>
+                    <p style="color: var(--color-gray-400); max-width: 700px; margin: 0 auto; font-size: 1.1rem;">Most
+                        agencies utilize drag-and-drop systems resulting in bloated, slow DOM trees. We write vanilla
+                        code resulting in perfect Lighthouse scores.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; border-radius: var(--border-radius-lg);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" style="color: #3b82f6; margin-bottom: 1.5rem;">
+                            <path fill="currentColor"
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                        </svg>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Pixel-Perfect Translation</h3>
+                        <p style="color: var(--color-gray-400); line-height: 1.6;">Our engineers translate high-fidelity
+                            Figma files directly into raw React component trees or CSS grid systems with 100% adherence
+                            to designer intent.</p>
+                    </div>
+
+                    <div
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; border-radius: var(--border-radius-lg);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" style="color: #8b5cf6; margin-bottom: 1.5rem;">
+                            <path fill="currentColor"
+                                d="M21 3H3c-1.11 0-2 .89-2 2v14c0 1.11.89 2 2 2h18c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 16H3V5h18v14zM8 15c0-1.66 1.34-3 3-3 .35 0 .69.07 1 .18V6h5v2h-3v7.03A3.003 3.003 0 0 1 11 18c-1.66 0-3-1.34-3-3z" />
+                        </svg>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Micro-Animation Layer</h3>
+                        <p style="color: var(--color-gray-400); line-height: 1.6;">We implement Framer Motion and native
+                            CSS keyframes to create a fluid, deeply tactile user experience that engages visitors
+                            subconsciously and forces interaction.</p>
+                    </div>
+
+                    <div
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; border-radius: var(--border-radius-lg);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" style="color: #10b981; margin-bottom: 1.5rem;">
+                            <path fill="currentColor"
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
+                        </svg>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Responsive Fluidity</h3>
+                        <p style="color: var(--color-gray-400); line-height: 1.6;">Utilizing advanced CSS clamp()
+                            functions and granular media queries, your interface will mathematically adapt to any
+                            viewport, from a 4K ultrawide monitor down to an iPhone Mini.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep Dive Layout Component -->
+        <section class="section" style="background: #020617; border-top: 1px solid rgba(255,255,255,0.05);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
+
+                    <!-- Left: Abstract Code / Visual -->
+                    <div
+                        style="position: relative; height: 500px; display: flex; align-items: center; justify-content: center;">
+                        <div
+                            style="width: 100%; height: 100%; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+
+                            <!-- Fake Browser Top Bar -->
+                            <div
+                                style="height: 40px; background: rgba(255,255,255,0.05); width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; padding: 0 1rem; gap: 0.5rem;">
+                                <div style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444;"></div>
+                                <div style="width: 12px; height: 12px; border-radius: 50%; background: #eab308;"></div>
+                                <div style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e;"></div>
+                            </div>
+
+                            <!-- UI Simulation -->
+                            <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column; gap: 1rem;">
+                                <div
+                                    style="width: 40%; height: 30px; background: rgba(59, 130, 246, 0.2); border-radius: 4px;">
+                                </div>
+                                <div
+                                    style="width: 80%; height: 15px; background: rgba(255,255,255,0.1); border-radius: 2px; margin-top: 1rem;">
+                                </div>
+                                <div
+                                    style="width: 60%; height: 15px; background: rgba(255,255,255,0.1); border-radius: 2px;">
+                                </div>
+
+                                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                                    <div
+                                        style="flex: 1; height: 100px; background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 8px;">
+                                    </div>
+                                    <div
+                                        style="flex: 1; height: 100px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px;">
+                                    </div>
+                                </div>
+
+                                <!-- Decorative code overlay -->
+                                <pre
+                                    style="position: absolute; bottom: 20px; left: 20px; font-family: monospace; font-size: 0.75rem; color: #a5b4fc; opacity: 0.5; margin: 0;">
+const SystemUI = ({ metrics }) => (
+  &lt;GlassmorphicContainer blur="10px"&gt;
+    &lt;FluidGrid columns={2} gap="1rem"&gt;
+      {metrics.map(m =&gt; &lt;DataNode key={m.id} /&gt;)}
+    &lt;/FluidGrid&gt;
+  &lt;/GlassmorphicContainer&gt;
+);
+                                 </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div>
+                        <span class="badge"
+                            style="background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); margin-bottom: 1.5rem;">THE
+                            AXISPRIME DIFFERENCE</span>
+                        <h2 style="font-size: 2.8rem; line-height: 1.1; margin-bottom: 1.5rem;">Core Web Vitals
+                            Obsession.</h2>
+                        <p
+                            style="font-size: 1.1rem; color: var(--color-gray-400); line-height: 1.7; margin-bottom: 1.5rem;">
+                            Google's search algorithm specifically penalizes layouts that shift during execution
+                            (Cumulative Layout Shift) or take longer than 2.5 seconds to paint the largest component on
+                            the screen (LCP).</p>
+                        <p
+                            style="font-size: 1.1rem; color: var(--color-gray-400); line-height: 1.7; margin-bottom: 2.5rem;">
+                            When we design your web architecture, performance optimization is entirely native to the
+                            design process. We slice high-resolution assets into modern WEBP formats dynamically and
+                            utilize aggressive edge-caching to guarantee that your aesthetics never compromise your
+                            acquisition capabilities.</p>
+
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+                            <li style="display: flex; align-items: center; gap: 1rem; color: white;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="color: #10b981;">
+                                    <path fill="currentColor"
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                </svg> 100/100 Lighthouse Performance Scores
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 1rem; color: white;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="color: #10b981;">
+                                    <path fill="currentColor"
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                </svg> Zero-Dependency Vanilla DOM Rendering
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 1rem; color: white;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="color: #10b981;">
+                                    <path fill="currentColor"
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                </svg> Fully Accessible (WCAG 2.1 AA Compliant) semantic HTML
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Case Section -->
+        <section class="section" style="border-top: 1px solid rgba(255,255,255,0.05);">
+            <div class="container text-center">
+                <h2>Designed for High-Velocity Sectors</h2>
+                <p style="color: var(--color-gray-400); max-width: 600px; margin: 0 auto 4rem auto;">Our custom
+                    architectural deployments are utilized by market leaders requiring absolute aesthetic perfection and
+                    stability.</p>
+
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <span
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.75rem 1.5rem; border-radius: 100px; color: white;">B2B
+                        SaaS Platforms</span>
+                    <span
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.75rem 1.5rem; border-radius: 100px; color: white;">Fintech
+                        Dashboards</span>
+                    <span
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.75rem 1.5rem; border-radius: 100px; color: white;">Decentralized
+                        Web3 Protocols</span>
+                    <span
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.75rem 1.5rem; border-radius: 100px; color: white;">DTC
+                        E-Commerce Retailers</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER (NEW LOGO) -->
+    <footer class="site-footer" style="background: #000000; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container container-sm">
+            <div class="footer-top">
+                <div class="footer-col footer-brand">
+                    <a href="./index.html" class="brand-logo"
+                        style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+                        <svg class="brand-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            style="width: 36px; height: 36px; overflow: visible;">
+                            <defs>
+                                <linearGradient id="logoGradPrimaryF" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#3b82f6" />
+                                    <stop offset="100%" stop-color="#8b5cf6" />
+                                </linearGradient>
+                                <linearGradient id="logoGradSecondaryF" x1="100%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="0%" stop-color="#1e3a8a" />
+                                    <stop offset="100%" stop-color="#4c1d95" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M50 5 C 85 5, 95 40, 50 95 C 5 40, 15 5, 50 5 Z" fill="none"
+                                stroke="url(#logoGradSecondaryF)" stroke-width="3" opacity="0.5" />
+                            <path d="M50 15 C 75 15, 85 45, 50 85 C 15 45, 25 15, 50 15 Z" fill="none"
+                                stroke="url(#logoGradPrimaryF)" stroke-width="1.5" opacity="0.8" />
+                            <path d="M50 20 L80 80 L65 80 L50 45 L35 80 L20 80 Z" fill="url(#logoGradPrimaryF)" />
+                            <path d="M42 62 L58 62 L53 72 L47 72 Z" fill="#ffffff" opacity="0.9" />
+                            <circle cx="50" cy="35" r="4" fill="#ffffff" />
+                        </svg>
+                        <span
+                            style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em;">AXISPRIME</span>
+                    </a>
+                    <p class="footer-desc" style="color: var(--color-gray-500); font-size: 0.95rem;">Engineering the
+                        future of enterprise digital infrastructure. We eliminate templates and deploy raw performance.
+                    </p>
+                    <div class="social-links" style="margin-top: 1.5rem;">
+                        <a href="#" class="social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
+                            </svg></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><svg viewBox="0 0 24 24">
+                                <path
+                                    d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10V10.05C2.38 12.15 3.86 13.88 5.82 14.28C5.46 14.38 5.08 14.43 4.69 14.43C4.41 14.43 4.14 14.4 3.88 14.35C4.43 16.07 6.03 17.33 7.92 17.36C6.45 18.52 4.59 19.2 2.58 19.2C2.23 19.2 1.88 19.18 1.54 19.14C3.44 20.35 5.7 21.05 8.12 21.05C16 21.05 20.31 14.53 20.31 8.87C20.31 8.68 20.31 8.5 20.3 8.31C21.13 7.7 21.87 6.91 22.46 6Z" />
+                            </svg></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24">
+                                <path
+                                    d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2C18.5 10.92 18.01 9.24 15.54 9.24C14.26 9.24 13.4 9.94 13.05 10.6H13.01V9.45H10.74V18.5H13.01V13.9C13.01 12.68 13.24 11.5 14.73 11.5C16.19 11.5 16.23 12.89 16.23 13.96V18.5H18.5M6.88 8.04C7.62 8.04 8.23 7.44 8.23 6.69C8.23 5.92 7.62 5.33 6.88 5.33C6.15 5.33 5.54 5.92 5.54 6.69C5.54 7.44 6.15 8.04 6.88 8.04M5.74 18.5H8.01V9.45H5.74V18.5Z" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 style="color: white;">Company</h4>
+                    <nav class="footer-links">
+                        <a href="./about.html" class="footer-link">About Us</a>
+                        <a href="./our-work.html" class="footer-link">Our Work</a>
+                        <a href="./careers.html" class="footer-link">Careers</a>
+                        <a href="./contact.html" class="footer-link">Contact</a>
+                    </nav>
+                </div>
+                <div class="footer-col">
+                    <h4 style="color: white;">Services</h4>
+                    <nav class="footer-links">
+                        <a href="./service-web-development.html" class="footer-link"
+                            style="color: var(--color-secondary);">Web Development</a>
+                        <a href="./service-mobile-apps.html" class="footer-link">Mobile Apps</a>
+                        <a href="./service-ecommerce.html" class="footer-link">E-Commerce</a>
+                        <a href="./service-cloud-solutions.html" class="footer-link">Cloud Solutions</a>
+                    </nav>
+                </div>
+                <div class="footer-col">
+                    <h4 style="color: white;">Headquarters</h4>
+                    <div class="contact-list">
+                        <div class="contact-item"><svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z" />
+                            </svg><span style="color: var(--color-gray-400);">123 Innovation Drive,<br>San Francisco, CA
+                                94043</span></div>
+                        <div class="contact-item"><svg viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg><a href="mailto:hello@axisprime.tech"
+                                style="color: var(--color-gray-400);">hello@axisprime.tech</a></div>
+                        <div class="contact-item"><svg viewBox="0 0 24 24">
+                                <path
+                                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.03 21c.73 0 1.01-.63 1.01-1.17v-3.46c0-.54-.45-.99-.99-.99z" />
+                            </svg><a href="tel:+15550123456" style="color: var(--color-gray-400);">+1 (555) 012-3456</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom" style="border-top-color: rgba(255,255,255,0.05); padding-top: 2rem;">
+                <div class="copyright" style="color: var(--color-gray-600); font-size: 0.85rem;">&copy; 2026 AXISPRIME
+                    TECHNOLOGIES. ALL RIGHTS RESERVED.</div>
+                <div class="footer-legal-links"><a href="./privacy.html"
+                        style="color: var(--color-gray-500); font-size: 0.85rem;">PRIVACY POLICY</a><a
+                        href="./terms.html" style="color: var(--color-gray-500); font-size: 0.85rem;">TERMS OF
+                        SERVICE</a></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

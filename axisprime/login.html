@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Portal Auth | AxisPrime</title>
+    <meta name="description" content="Secure JWT authentications.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body
+    style="background: #000000; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; font-family: 'Inter', sans-serif;">
+
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0;">
+        <div
+            style="position: absolute; top: -20%; right: -10%; width: 60vw; height: 60vw; max-width: 800px; max-height: 800px; background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 60%);">
+        </div>
+        <div
+            style="position: absolute; bottom: -20%; left: -10%; width: 60vw; height: 60vw; max-width: 800px; max-height: 800px; background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 60%);">
+        </div>
+    </div>
+
+    <div
+        style="background: #0f172a; padding: 3rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0 50px rgba(0,0,0,0.8); width: 100%; max-width: 450px; position: relative; z-index: 2;">
+
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <a href="./index.html" class="brand-logo"
+                style="display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; text-decoration: none; margin-bottom: 1.5rem;">
+                <svg class="brand-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="width: 48px; height: 48px; overflow: visible;">
+                    <defs>
+                        <linearGradient id="logoGradPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#3b82f6" />
+                            <stop offset="100%" stop-color="#8b5cf6" />
+                        </linearGradient>
+                        <linearGradient id="logoGradSecondary" x1="100%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#1e3a8a" />
+                            <stop offset="100%" stop-color="#4c1d95" />
+                        </linearGradient>
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    <path d="M50 5 C 85 5, 95 40, 50 95 C 5 40, 15 5, 50 5 Z" fill="none"
+                        stroke="url(#logoGradSecondary)" stroke-width="3" opacity="0.5" />
+                    <path d="M50 15 C 75 15, 85 45, 50 85 C 15 45, 25 15, 50 15 Z" fill="none"
+                        stroke="url(#logoGradPrimary)" stroke-width="1.5" opacity="0.8" />
+                    <path d="M50 20 L80 80 L65 80 L50 45 L35 80 L20 80 Z" fill="url(#logoGradPrimary)"
+                        filter="url(#glow)" />
+                    <path d="M42 62 L58 62 L53 72 L47 72 Z" fill="#ffffff" opacity="0.9" />
+                    <circle cx="50" cy="35" r="4" fill="#ffffff" filter="url(#glow)" />
+                </svg>
+            </a>
+            <h1 style="font-family: 'Outfit', sans-serif; color: white; margin: 0 0 0.5rem 0; font-size: 1.8rem;">Portal
+                Authorization</h1>
+            <p style="color: var(--color-gray-400); margin: 0; font-size: 0.95rem;">Enter credentials to receive JWT
+                payload.</p>
+        </div>
+
+        <form id="auth-form" onsubmit="event.preventDefault(); alert('Authentication API endpoint simulated.');">
+            <div style="margin-bottom: 1.5rem;">
+                <label for="email"
+                    style="display: block; font-size: 0.85rem; color: var(--color-gray-300); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Admin
+                    Email</label>
+                <div style="position: relative;">
+                    <svg width="20" height="20" viewBox="0 0 24 24"
+                        style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--color-gray-500);">
+                        <path fill="currentColor"
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                    <input type="email" id="email" required placeholder="admin@axisprime.tech"
+                        style="width: 100%; padding: 0.8rem 0.8rem 0.8rem 2.8rem; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; color: white; outline: none; transition: border-color 0.2s;">
+                </div>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <label for="password"
+                    style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--color-gray-300); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                    <span>Password Hash</span>
+                    <a href="#"
+                        style="color: #60a5fa; text-decoration: none; text-transform: none; font-size: 0.8rem; letter-spacing: 0;">Reset
+                        Key?</a>
+                </label>
+                <div style="position: relative;">
+                    <svg width="20" height="20" viewBox="0 0 24 24"
+                        style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--color-gray-500);">
+                        <path fill="currentColor"
+                            d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                    </svg>
+                    <input type="password" id="password" required placeholder="••••••••••••"
+                        style="width: 100%; padding: 0.8rem 0.8rem 0.8rem 2.8rem; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; color: white; outline: none; transition: border-color 0.2s;">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary"
+                style="width: 100%; padding: 1rem; background: linear-gradient(135deg, #3b82f6, #8b5cf6); border: none; font-size: 1.05rem; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 0.5rem;">
+                Authenticate
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                </svg>
+            </button>
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: var(--color-gray-500);">
+                <a href="./index.html"
+                    style="color: var(--color-gray-400); text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+                    </svg>
+                    Return to public site
+                </a>
+            </p>
+        </form>
+    </div>
+</body>
+
+</html>

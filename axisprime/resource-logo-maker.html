@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Brand Architecture | AxisPrime</title>
+    <meta name="description" content="Generate SVG vectors dynamically with our AI-powered branding suite.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./scripts.js" defer></script>
+</head>
+
+<body>
+
+    <!-- GLOBAL HEADER (NEW LOGO) -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="./index.html" class="brand-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+                <svg class="brand-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="width: 42px; height: 42px; overflow: visible;">
+                    <defs>
+                        <linearGradient id="logoGradPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#3b82f6" />
+                            <stop offset="100%" stop-color="#8b5cf6" />
+                        </linearGradient>
+                        <linearGradient id="logoGradSecondary" x1="100%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#1e3a8a" />
+                            <stop offset="100%" stop-color="#4c1d95" />
+                        </linearGradient>
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    <path d="M50 5 C 85 5, 95 40, 50 95 C 5 40, 15 5, 50 5 Z" fill="none"
+                        stroke="url(#logoGradSecondary)" stroke-width="3" opacity="0.5" />
+                    <path d="M50 15 C 75 15, 85 45, 50 85 C 15 45, 25 15, 50 15 Z" fill="none"
+                        stroke="url(#logoGradPrimary)" stroke-width="1.5" opacity="0.8" />
+                    <path d="M50 20 L80 80 L65 80 L50 45 L35 80 L20 80 Z" fill="url(#logoGradPrimary)"
+                        filter="url(#glow)" />
+                    <path d="M42 62 L58 62 L53 72 L47 72 Z" fill="#ffffff" opacity="0.9" />
+                    <circle cx="50" cy="35" r="4" fill="#ffffff" filter="url(#glow)" />
+                </svg>
+                <span
+                    style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em;">AXISPRIME</span>
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Product <svg width="12" height="12" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                            </svg></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-section">
+                                <h4>Creation</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="./product-web-design.html" class="mega-link">Website design</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" style="color: var(--color-secondary);">Resources <svg width="12"
+                                height="12" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                            </svg></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-section">
+                                <h4>Action</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="./resource-hire-professional.html" class="mega-link">Hire a
+                                            professional</a></li>
+                                    <li><a href="./resource-logo-maker.html" class="mega-link"
+                                            style="color: var(--color-secondary);">Logo maker</a></li>
+                                    <li><a href="./resource-name-generator.html" class="mega-link">Name generator</a>
+                                    </li>
+                                    <li><a href="./resource-free-tools.html" class="mega-link">Free tools</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="./login.html" class="nav-link">Portal</a>
+                <a href="./contact.html" class="btn btn-primary"
+                    style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); border: none;">Generate Identity</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero"
+            style="min-height: 85vh; display: flex; align-items: center; justify-content: center; position: relative; background: #000000; overflow: hidden;">
+            <div
+                style="position: absolute; top: -10%; left: 10%; width: 50vw; height: 50vw; max-width: 600px; max-height: 600px; background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 60%); z-index: -1;">
+            </div>
+
+            <div class="container text-center" style="position: relative; z-index: 2;">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <span class="badge"
+                        style="background: rgba(245, 158, 11, 0.15); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.3); margin-bottom: 1.5rem;">ALGORITHMIC
+                        BRANDING</span>
+                    <h1
+                        style="font-size: clamp(3rem, 5vw, 5.5rem); margin-bottom: 1.5rem; line-height: 1.05; letter-spacing: -0.02em; font-family: 'Outfit', sans-serif;">
+                        Generative SVG Identity.
+                    </h1>
+                    <p class="lead"
+                        style="margin-bottom: 3rem; font-size: 1.35rem; color: var(--color-gray-300); line-height: 1.6;">
+                        Stop downloading pixelated PNGs from generic logo generators. Our engine outputs mathematically
+                        perfect raw SVG DOM nodes based on your precise brand variables, ensuring infinite scalability.
+                    </p>
+
+                    <div
+                        style="max-width: 600px; margin: 0 auto; display: flex; gap: 0.5rem; background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <input type="text" placeholder="Enter your company name..."
+                            style="flex-grow: 1; background: transparent; border: none; padding: 1rem; color: white; font-size: 1.1rem; outline: none;">
+                        <button class="btn btn-primary"
+                            style="background: linear-gradient(135deg, #f59e0b, #d97706); border: none;">Execute
+                            Build</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition Grid -->
+        <section class="section section-dark" style="border-top: 1px solid rgba(255,255,255,0.05);">
+            <div class="container">
+                <div class="grid-3">
+                    <div
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; border-radius: var(--border-radius-lg);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" style="color: #f59e0b; margin-bottom: 1.5rem;">
+                            <path fill="currentColor"
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                        </svg>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Mathematical Precision</h3>
+                        <p style="color: var(--color-gray-400); line-height: 1.6;">We generate Bezier curves via React
+                            rendering cycles. Your logo acts as structural DOM elements, meaning no jagged edges whether
+                            printed on a business card or displayed on a 4K stadium jumbotron.</p>
+                    </div>
+
+                    <div
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; border-radius: var(--border-radius-lg);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" style="color: #10b981; margin-bottom: 1.5rem;">
+                            <path fill="currentColor"
+                                d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+                        </svg>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Hex-Code Validation</h3>
+                        <p style="color: var(--color-gray-400); line-height: 1.6;">The engine enforces strict Web
+                            Content Accessibility Guidelines (WCAG). It algorithmically prevents you from generating a
+                            logo with low-contrast colors that would fail enterprise compliance tests.</p>
+                    </div>
+
+                    <div
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; border-radius: var(--border-radius-lg);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" style="color: #ec4899; margin-bottom: 1.5rem;">
+                            <path fill="currentColor"
+                                d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                        </svg>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Export Pipelines</h3>
+                        <p style="color: var(--color-gray-400); line-height: 1.6;">One click executes a lambda function
+                            that packages your brand identity into raw `.svg`, minified `.css` icons, `.pdf` vector
+                            formats, and a standardized Brand Guidelines markdown file synced to your GitHub.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER (NEW LOGO) -->
+    <footer class="site-footer" style="background: #000000; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container container-sm">
+            <div class="footer-top">
+                <div class="footer-col footer-brand">
+                    <a href="./index.html" class="brand-logo"
+                        style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+                        <svg class="brand-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            style="width: 36px; height: 36px; overflow: visible;">
+                            <defs>
+                                <linearGradient id="logoGradPrimaryF" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#3b82f6" />
+                                    <stop offset="100%" stop-color="#8b5cf6" />
+                                </linearGradient>
+                                <linearGradient id="logoGradSecondaryF" x1="100%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="0%" stop-color="#1e3a8a" />
+                                    <stop offset="100%" stop-color="#4c1d95" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M50 5 C 85 5, 95 40, 50 95 C 5 40, 15 5, 50 5 Z" fill="none"
+                                stroke="url(#logoGradSecondaryF)" stroke-width="3" opacity="0.5" />
+                            <path d="M50 15 C 75 15, 85 45, 50 85 C 15 45, 25 15, 50 15 Z" fill="none"
+                                stroke="url(#logoGradPrimaryF)" stroke-width="1.5" opacity="0.8" />
+                            <path d="M50 20 L80 80 L65 80 L50 45 L35 80 L20 80 Z" fill="url(#logoGradPrimaryF)" />
+                            <path d="M42 62 L58 62 L53 72 L47 72 Z" fill="#ffffff" opacity="0.9" />
+                            <circle cx="50" cy="35" r="4" fill="#ffffff" />
+                        </svg>
+                        <span
+                            style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em;">AXISPRIME</span>
+                    </a>
+                    <p class="footer-desc" style="color: var(--color-gray-500); font-size: 0.95rem;">Engineering the
+                        future of enterprise digital infrastructure. We eliminate templates and deploy raw performance.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="border-top-color: rgba(255,255,255,0.05); padding-top: 2rem;">
+                <div class="copyright" style="color: var(--color-gray-600); font-size: 0.85rem;">&copy; 2026 AXISPRIME
+                    TECHNOLOGIES. ALL RIGHTS RESERVED.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

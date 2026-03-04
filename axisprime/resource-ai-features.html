@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise AI Integration | AxisPrime</title>
+    <meta name="description"
+        content="Proprietary Large Language Models injected directly into your organizational workflows.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./scripts.js" defer></script>
+</head>
+
+<body>
+
+    <!-- GLOBAL HEADER (NEW LOGO) -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="./index.html" class="brand-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+                <svg class="brand-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="width: 42px; height: 42px; overflow: visible;">
+                    <defs>
+                        <linearGradient id="logoGradPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#3b82f6" />
+                            <stop offset="100%" stop-color="#8b5cf6" />
+                        </linearGradient>
+                        <linearGradient id="logoGradSecondary" x1="100%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#1e3a8a" />
+                            <stop offset="100%" stop-color="#4c1d95" />
+                        </linearGradient>
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    <path d="M50 5 C 85 5, 95 40, 50 95 C 5 40, 15 5, 50 5 Z" fill="none"
+                        stroke="url(#logoGradSecondary)" stroke-width="3" opacity="0.5" />
+                    <path d="M50 15 C 75 15, 85 45, 50 85 C 15 45, 25 15, 50 15 Z" fill="none"
+                        stroke="url(#logoGradPrimary)" stroke-width="1.5" opacity="0.8" />
+                    <path d="M50 20 L80 80 L65 80 L50 45 L35 80 L20 80 Z" fill="url(#logoGradPrimary)"
+                        filter="url(#glow)" />
+                    <path d="M42 62 L58 62 L53 72 L47 72 Z" fill="#ffffff" opacity="0.9" />
+                    <circle cx="50" cy="35" r="4" fill="#ffffff" filter="url(#glow)" />
+                </svg>
+                <span
+                    style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em;">AXISPRIME</span>
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Product <svg width="12" height="12" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                            </svg></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-section">
+                                <h4>Creation</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="./product-ai-builder.html" class="mega-link">AI website builder</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" style="color: var(--color-secondary);">Resources <svg width="12"
+                                height="12" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                            </svg></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-section">
+                                <h4>Learn</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="./resource-axis-blog.html" class="mega-link">AxisPrime blog</a></li>
+                                    <li><a href="./resource-ai-features.html" class="mega-link"
+                                            style="color: var(--color-secondary);">AI features</a></li>
+                                    <li><a href="./resource-inspiration.html" class="mega-link">Inspiration</a></li>
+                                    <li><a href="./resource-help-center.html" class="mega-link">Help center</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="./login.html" class="nav-link">Portal</a>
+                <a href="./contact.html" class="btn btn-primary"
+                    style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); border: none;">Consult AI
+                    Architects</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero"
+            style="min-height: 85vh; display: flex; align-items: center; justify-content: center; position: relative; background: #000000; overflow: hidden;">
+            <div
+                style="position: absolute; top: 0%; left: -5%; width: 50vw; height: 50vw; max-width: 600px; max-height: 600px; background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 60%); z-index: -1;">
+            </div>
+
+            <div class="container text-center" style="position: relative; z-index: 2;">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <span class="badge"
+                        style="background: rgba(139, 92, 246, 0.15); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.3); margin-bottom: 1.5rem;">LARGE
+                        LANGUAGE MODELS</span>
+                    <h1
+                        style="font-size: clamp(3rem, 5vw, 5.5rem); margin-bottom: 1.5rem; line-height: 1.05; letter-spacing: -0.02em; font-family: 'Outfit', sans-serif;">
+                        Neural networks in production.
+                    </h1>
+                    <p class="lead"
+                        style="margin-bottom: 3rem; font-size: 1.35rem; color: var(--color-gray-300); line-height: 1.6;">
+                        ChatGPT is a consumer toy. We engineer enterprise-grade AI pipelines by securely integrating
+                        OpenAI and Anthropic APIs directly into your bespoke business software, automating operations
+                        previously requiring human intellect.
+                    </p>
+
+                    <div style="display: flex; gap: 1rem; align-items: center; justify-content: center;">
+                        <a href="./contact.html" class="btn btn-primary"
+                            style="font-size: 1.15rem; padding: 1.2rem 2.5rem; background: linear-gradient(135deg, #8b5cf6, #5b21b6); border: none; box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.5);">Explore
+                            Neural APIs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition Grid -->
+        <section class="section section-dark" style="border-top: 1px solid rgba(255,255,255,0.05);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 4rem;">
+                    <h2>Vectoring your proprietary data.</h2>
+                    <p style="color: var(--color-gray-400); max-width: 700px; margin: 0 auto; font-size: 1.1rem;">A base
+                        LLM knows nothing about your company. We chunk, embed, and ingest your private PDF manuals and
+                        Slack histories into secure Pinecone vector databases to grant the AI context.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; border-radius: var(--border-radius-lg);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" style="color: #c084fc; margin-bottom: 1.5rem;">
+                            <path fill="currentColor"
+                                d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-2 14H5V5h14v12zm-3-8h-3v3h-2V9H8V7h3V4h2v3h3v2z" />
+                        </svg>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">RAG Architecture</h3>
+                        <p style="color: var(--color-gray-400); line-height: 1.6;">Retrieval-Augmented Generation (RAG)
+                            ensures the model never hallucinates. When a customer asks a question, the system queries
+                            your private database first, feeding the exact documentation passage into the LLM context
+                            windown to formulate the perfect response.</p>
+                    </div>
+
+                    <div
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; border-radius: var(--border-radius-lg);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" style="color: #8b5cf6; margin-bottom: 1.5rem;">
+                            <path fill="currentColor" d="M19 13H5v-2h14v2z" />
+                        </svg>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Automated Structuring</h3>
+                        <p style="color: var(--color-gray-400); line-height: 1.6;">Have thousands of messy emails? We
+                            write Node.js scripts that iterate through unstructured text and utilize AI models tuned for
+                            Function Calling to extract names, addresses, and sentiment into perfect JSON objects.</p>
+                    </div>
+
+                    <div
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; border-radius: var(--border-radius-lg);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" style="color: #6366f1; margin-bottom: 1.5rem;">
+                            <path fill="currentColor"
+                                d="M11 2v20c-5.07-.5-9-4.79-9-10s3.93-9.5 9-10zm2 0v8.99L20.5 8c-1.39-3.41-4.63-5.83-8.5-6zm0 20c3.87-.17 7.11-2.59 8.5-6L13 13.01V22z" />
+                        </svg>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Algorithmic Guardrails</h3>
+                        <p style="color: var(--color-gray-400); line-height: 1.6;">You can't let an AI bot promise a
+                            customer a free car. We engineer rigid system prompts and middleware evaluator models that
+                            double-check outgoing transmissions for prompt-injection attacks or brand-unsafe commitments
+                            before sending.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER (NEW LOGO) -->
+    <footer class="site-footer" style="background: #000000; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container container-sm">
+            <div class="footer-top">
+                <div class="footer-col footer-brand">
+                    <a href="./index.html" class="brand-logo"
+                        style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+                        <svg class="brand-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            style="width: 36px; height: 36px; overflow: visible;">
+                            <defs>
+                                <linearGradient id="logoGradPrimaryF" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#3b82f6" />
+                                    <stop offset="100%" stop-color="#8b5cf6" />
+                                </linearGradient>
+                                <linearGradient id="logoGradSecondaryF" x1="100%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="0%" stop-color="#1e3a8a" />
+                                    <stop offset="100%" stop-color="#4c1d95" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M50 5 C 85 5, 95 40, 50 95 C 5 40, 15 5, 50 5 Z" fill="none"
+                                stroke="url(#logoGradSecondaryF)" stroke-width="3" opacity="0.5" />
+                            <path d="M50 15 C 75 15, 85 45, 50 85 C 15 45, 25 15, 50 15 Z" fill="none"
+                                stroke="url(#logoGradPrimaryF)" stroke-width="1.5" opacity="0.8" />
+                            <path d="M50 20 L80 80 L65 80 L50 45 L35 80 L20 80 Z" fill="url(#logoGradPrimaryF)" />
+                            <path d="M42 62 L58 62 L53 72 L47 72 Z" fill="#ffffff" opacity="0.9" />
+                            <circle cx="50" cy="35" r="4" fill="#ffffff" />
+                        </svg>
+                        <span
+                            style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em;">AXISPRIME</span>
+                    </a>
+                    <p class="footer-desc" style="color: var(--color-gray-500); font-size: 0.95rem;">Engineering the
+                        future of enterprise digital infrastructure. We eliminate templates and deploy raw performance.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="border-top-color: rgba(255,255,255,0.05); padding-top: 2rem;">
+                <div class="copyright" style="color: var(--color-gray-600); font-size: 0.85rem;">&copy; 2026 AXISPRIME
+                    TECHNOLOGIES. ALL RIGHTS RESERVED.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

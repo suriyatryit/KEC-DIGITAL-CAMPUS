@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Source Infrastructure Tools | AxisPrime</title>
+    <meta name="description"
+        content="Free utilities to minify CSS, validate JSON payloads, and format raw SQL strings.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./scripts.js" defer></script>
+</head>
+
+<body>
+
+    <!-- GLOBAL HEADER (NEW LOGO) -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="./index.html" class="brand-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+                <svg class="brand-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="width: 42px; height: 42px; overflow: visible;">
+                    <defs>
+                        <linearGradient id="logoGradPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#3b82f6" />
+                            <stop offset="100%" stop-color="#8b5cf6" />
+                        </linearGradient>
+                        <linearGradient id="logoGradSecondary" x1="100%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#1e3a8a" />
+                            <stop offset="100%" stop-color="#4c1d95" />
+                        </linearGradient>
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    <path d="M50 5 C 85 5, 95 40, 50 95 C 5 40, 15 5, 50 5 Z" fill="none"
+                        stroke="url(#logoGradSecondary)" stroke-width="3" opacity="0.5" />
+                    <path d="M50 15 C 75 15, 85 45, 50 85 C 15 45, 25 15, 50 15 Z" fill="none"
+                        stroke="url(#logoGradPrimary)" stroke-width="1.5" opacity="0.8" />
+                    <path d="M50 20 L80 80 L65 80 L50 45 L35 80 L20 80 Z" fill="url(#logoGradPrimary)"
+                        filter="url(#glow)" />
+                    <path d="M42 62 L58 62 L53 72 L47 72 Z" fill="#ffffff" opacity="0.9" />
+                    <circle cx="50" cy="35" r="4" fill="#ffffff" filter="url(#glow)" />
+                </svg>
+                <span
+                    style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em;">AXISPRIME</span>
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Product <svg width="12" height="12" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                            </svg></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-section">
+                                <h4>Business</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="./product-portfolio.html" class="mega-link">Portfolio Engine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" style="color: var(--color-secondary);">Resources <svg width="12"
+                                height="12" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                            </svg></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-section">
+                                <h4>Action</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="./resource-hire-professional.html" class="mega-link">Hire a
+                                            professional</a></li>
+                                    <li><a href="./resource-logo-maker.html" class="mega-link">Logo maker</a></li>
+                                    <li><a href="./resource-name-generator.html" class="mega-link">Name generator</a>
+                                    </li>
+                                    <li><a href="./resource-free-tools.html" class="mega-link"
+                                            style="color: var(--color-secondary);">Free tools</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="./login.html" class="nav-link">Portal</a>
+                <a href="./contact.html" class="btn btn-primary"
+                    style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); border: none;">Go to GitHub Repo</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero"
+            style="min-height: 50vh; display: flex; align-items: center; justify-content: center; position: relative; background: #000000; overflow: hidden; padding-top: 6rem;">
+            <div style="position: absolute; top: 0; left: 0%; width: 100%; height: 100%; z-index: 0; opacity: 0.2;">
+                <!-- Code Matrix Background -->
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <text x="5%" y="10%" fill="#4 ade80" font-family="monospace" font-size="0.8rem" opacity="0.3">export
+                        const parseJWT = (token) => { return JSON.parse(base64UrlDecode); }</text>
+                    <text x="25%" y="30%" fill="#4ade80" font-family="monospace" font-size="0.8rem" opacity="0.5">SELECT
+                        * FROM users WHERE active=1;</text>
+                    <text x="15%" y="60%" fill="#4ade80" font-family="monospace" font-size="0.8rem" opacity="0.4">const
+                        { data } = await axios.get('/api/users');</text>
+                    <text x="65%" y="20%" fill="#4ade80" font-family="monospace" font-size="0.8rem"
+                        opacity="0.2">docker-compose up -d --build mongodb redis</text>
+                    <text x="55%" y="80%" fill="#4ade80" font-family="monospace" font-size="0.8rem" opacity="0.6">git
+                        checkout -b feature/auth && git commit -m "init"</text>
+                </svg>
+            </div>
+
+            <div class="container text-center" style="position: relative; z-index: 2;">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <span class="badge"
+                        style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); margin-bottom: 1.5rem;">OPEN
+                        SOURCE INITIATIVE</span>
+                    <h1
+                        style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1.5rem; line-height: 1.05; letter-spacing: -0.02em; font-family: 'Outfit', sans-serif;">
+                        Developer Utilities.
+                    </h1>
+                    <p class="lead"
+                        style="margin-bottom: 0; font-size: 1.25rem; color: var(--color-gray-400); line-height: 1.6;">
+                        A collection of free tools running flawlessly on Client-Side WebAssembly. No data hits our
+                        servers; your strings are parsed locally.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Grid -->
+        <section class="section section-dark" style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 4rem;">
+            <div class="container">
+                <div class="grid-3">
+                    <!-- Tool 1 -->
+                    <a href="#"
+                        style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 2.5rem 2rem; border-radius: var(--border-radius-lg); transition: transform 0.2s ease, border-color 0.2s ease;">
+                        <h3
+                            style="font-size: 1.2rem; margin-bottom: 1rem; color: white; display: flex; align-items: center; justify-content: space-between;">
+                            JSON Validator
+                            <svg width="20" height="20" viewBox="0 0 24 24" style="color: #4ade80;">
+                                <path fill="currentColor"
+                                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                            </svg>
+                        </h3>
+                        <p style="color: var(--color-gray-400); font-size: 0.95rem; line-height: 1.5;">Paste messy JSON
+                            strings to instantly format, validate schema syntax, and pinpoint exact line-number errors.
+                        </p>
+                    </a>
+
+                    <!-- Tool 2 -->
+                    <a href="#"
+                        style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 2.5rem 2rem; border-radius: var(--border-radius-lg); transition: transform 0.2s ease, border-color 0.2s ease;">
+                        <h3
+                            style="font-size: 1.2rem; margin-bottom: 1rem; color: white; display: flex; align-items: center; justify-content: space-between;">
+                            Regex Playground
+                            <svg width="20" height="20" viewBox="0 0 24 24" style="color: #fca5a5;">
+                                <path fill="currentColor"
+                                    d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                            </svg>
+                        </h3>
+                        <p style="color: var(--color-gray-400); font-size: 0.95rem; line-height: 1.5;">Test complex
+                            Regular Expressions in real-time against target strings with highlighted capture group
+                            outputs.</p>
+                    </a>
+
+                    <!-- Tool 3 -->
+                    <a href="#"
+                        style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 2.5rem 2rem; border-radius: var(--border-radius-lg); transition: transform 0.2s ease, border-color 0.2s ease;">
+                        <h3
+                            style="font-size: 1.2rem; margin-bottom: 1rem; color: white; display: flex; align-items: center; justify-content: space-between;">
+                            Bcrypt Hash Generator
+                            <svg width="20" height="20" viewBox="0 0 24 24" style="color: #cbd5e1;">
+                                <path fill="currentColor"
+                                    d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+                            </svg>
+                        </h3>
+                        <p style="color: var(--color-gray-400); font-size: 0.95rem; line-height: 1.5;">Input raw
+                            passwords to generate immediate salt+hash outputs using the standard blowfish cipher
+                            parameters.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER (NEW LOGO) -->
+    <footer class="site-footer" style="background: #000000; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container container-sm">
+            <div class="footer-top">
+                <div class="footer-col footer-brand">
+                    <a href="./index.html" class="brand-logo"
+                        style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+                        <svg class="brand-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            style="width: 36px; height: 36px; overflow: visible;">
+                            <defs>
+                                <linearGradient id="logoGradPrimaryF" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#3b82f6" />
+                                    <stop offset="100%" stop-color="#8b5cf6" />
+                                </linearGradient>
+                                <linearGradient id="logoGradSecondaryF" x1="100%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="0%" stop-color="#1e3a8a" />
+                                    <stop offset="100%" stop-color="#4c1d95" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M50 5 C 85 5, 95 40, 50 95 C 5 40, 15 5, 50 5 Z" fill="none"
+                                stroke="url(#logoGradSecondaryF)" stroke-width="3" opacity="0.5" />
+                            <path d="M50 15 C 75 15, 85 45, 50 85 C 15 45, 25 15, 50 15 Z" fill="none"
+                                stroke="url(#logoGradPrimaryF)" stroke-width="1.5" opacity="0.8" />
+                            <path d="M50 20 L80 80 L65 80 L50 45 L35 80 L20 80 Z" fill="url(#logoGradPrimaryF)" />
+                            <path d="M42 62 L58 62 L53 72 L47 72 Z" fill="#ffffff" opacity="0.9" />
+                            <circle cx="50" cy="35" r="4" fill="#ffffff" />
+                        </svg>
+                        <span
+                            style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em;">AXISPRIME</span>
+                    </a>
+                    <p class="footer-desc" style="color: var(--color-gray-500); font-size: 0.95rem;">Engineering the
+                        future of enterprise digital infrastructure. We eliminate templates and deploy raw performance.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="border-top-color: rgba(255,255,255,0.05); padding-top: 2rem;">
+                <div class="copyright" style="color: var(--color-gray-600); font-size: 0.85rem;">&copy; 2026 AXISPRIME
+                    TECHNOLOGIES. ALL RIGHTS RESERVED.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
