@@ -1,0 +1,10 @@
+<svg viewBox="0 0 64 64" fill="#800000" xmlns="http://www.w3.org/2000/svg">
+   <g transform="translate(0, 8)">
+      <path d="M32 0L60 20H4L32 0Z" />
+      <rect x="0" y="20" width="64" height="4" />
+      <rect x="8" y="26" width="8" height="16" />
+      <rect x="28" y="26" width="8" height="16" />
+      <rect x="48" y="26" width="8" height="16" />
+      <rect x="0" y="44" width="64" height="4" />
+   </g>
+</svg>
