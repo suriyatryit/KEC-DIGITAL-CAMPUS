@@ -32,7 +32,7 @@ export default function DashboardLayout() {
   };
 
   return (
-    <div className="min-h-screen flex text-[#1E293B] dark:text-[#F8FAFC] font-body relative overflow-hidden bg-transparent selection:bg-[#991B1B]/10">
+    <div className="min-h-screen flex selection:bg-brand-accent/20 bg-[#050A14] text-slate-200">
       {/* Sidebar - Mobile Overlay */}
       <div 
         className={`fixed inset-0 bg-[#0F172A]/40 backdrop-blur-sm z-40 lg:hidden transition-opacity ${sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
@@ -41,14 +41,14 @@ export default function DashboardLayout() {
 
       {/* Sidebar */}
       <aside 
-        className={`fixed inset-y-4 left-4 z-50 w-72 lg:static lg:translate-x-0 transform transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col bg-[#0F172A] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] lg:m-4 border border-white/5 ${
+        className={`fixed inset-y-4 left-4 z-50 w-72 lg:static lg:translate-x-0 transform transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col bg-brand-primary rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.4)] lg:m-4 border border-white/5 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-[120%]'
         }`}
       >
         <div className="h-28 flex items-center justify-between px-8 bg-gradient-to-br from-[#0F172A] via-[#0F172A] to-[#1E293B] text-white relative overflow-hidden shrink-0 border-b border-white/5">
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#991B1B]/10 rounded-full blur-[40px] -mr-16 -mt-16"></div>
           <div className="relative z-10 w-full flex items-center justify-between">
-            <KingstonLogo textColor="text-white" variant="small" iconSize={28} className="scale-110 origin-left" />
+            <KingstonLogo textColor="text-white" variant="small" iconSize={28} className="brightness-125" />
             <button onClick={() => setSidebarOpen(false)} className="lg:hidden p-2 text-white/50 hover:text-white hover:bg-white/10 rounded-xl transition-all">
               <X size={24} />
             </button>
@@ -62,7 +62,7 @@ export default function DashboardLayout() {
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-sm font-black text-white tracking-tight truncate uppercase">{user.name}</p>
-              <p className="text-[10px] text-[#991B1B] font-black uppercase tracking-[0.2em] mt-0.5">{ROLE_LABELS[user.role]}</p>
+              <p className="text-[10px] text-brand-accent font-black uppercase tracking-[0.2em] mt-0.5">{ROLE_LABELS[user.role]}</p>
             </div>
           </div>
         </div>
@@ -80,11 +80,11 @@ export default function DashboardLayout() {
                 }}
                 className={`w-full flex items-center gap-4 px-5 py-4 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${
                   isActive 
-                    ? 'bg-white text-[#0F172A] shadow-xl shadow-black/20 translate-x-1' 
-                    : 'text-slate-400 hover:text-white hover:bg-white/5'
+                    ? 'bg-brand-accent text-white shadow-xl shadow-brand-accent/20 translate-x-1' 
+                    : 'text-slate-500 hover:text-white hover:bg-white/5'
                 }`}
               >
-                <Icon size={18} className={isActive ? 'text-[#991B1B]' : 'opacity-40'} />
+                <Icon size={18} className={isActive ? 'text-white' : 'opacity-40'} />
                 {item.label}
               </button>
             );
@@ -97,14 +97,14 @@ export default function DashboardLayout() {
             className="w-full flex items-center gap-4 px-5 py-4 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] text-[#991B1B] hover:bg-red-500/5 transition-all group"
           >
             <LogOut size={18} className="group-hover:-translate-x-1 transition-transform" />
-            Terminate Session
+            Clear Access Node
           </button>
         </div>
       </aside>
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0 h-screen relative px-4 pb-4">
-        <header className="h-20 mt-4 mb-8 bg-white/80 dark:bg-[#0F172A]/80 backdrop-blur-[32px] rounded-[2rem] flex items-center justify-between px-10 z-40 sticky top-4 shadow-xl shadow-black/5 border border-white/20 dark:border-white/5 mx-0 lg:mx-2 transition-all">
+        <header className="h-20 mt-4 mb-8 bg-brand-primary/40 backdrop-blur-[32px] rounded-[2rem] flex items-center justify-between px-10 z-40 sticky top-4 shadow-xl shadow-black/20 border border-white/5 mx-0 lg:mx-2 transition-all">
           <button
             onClick={() => setSidebarOpen(true)}
             className="lg:hidden p-2 text-slate-400 hover:text-[#0F172A] transition-colors"
@@ -128,8 +128,8 @@ export default function DashboardLayout() {
               <Moon size={20} className="hidden dark:block" />
               <Sun size={20} className="block dark:hidden" />
             </button>
-            <button className="relative p-3 text-slate-400 hover:text-[#0F172A] transition-all rounded-[1.25rem] hover:bg-slate-50 dark:hover:bg-white/5">
-              <span className="absolute top-3 right-3 w-2.5 h-2.5 bg-[#991B1B] rounded-full ring-4 ring-white dark:ring-[#0F172A] shadow-lg animate-pulse"></span>
+            <button className="relative p-3 text-slate-400 hover:text-white transition-all rounded-[1.25rem] hover:bg-white/5">
+              <span className="absolute top-3 right-3 w-2.5 h-2.5 bg-brand-accent rounded-full ring-4 ring-brand-primary shadow-lg animate-pulse"></span>
               <Bell size={20} />
             </button>
             <div className="h-12 w-12 rounded-[1.25rem] bg-gradient-to-br from-[#0F172A] to-[#1E293B] flex items-center justify-center shadow-2xl text-white ring-4 ring-slate-50 dark:ring-white/5">

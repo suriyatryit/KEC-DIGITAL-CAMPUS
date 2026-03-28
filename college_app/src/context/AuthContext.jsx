@@ -64,7 +64,19 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     // Check active sessions and sets the user
+    console.log('AuthContext: Initializing session check...');
+    
+    // Safety timeout to prevent permanent blank screen (3 seconds)
+    const timeout = setTimeout(() => {
+      if (loading) {
+        console.warn('AuthContext: Session check timed out, forcing loading to false');
+        setLoading(false);
+      }
+    }, 3000);
+
     supabase.auth.getSession().then(async ({ data: { session } }) => {
+      clearTimeout(timeout);
+      console.log('AuthContext: Session retrieved:', session ? 'Active' : 'None');
       try {
         if (session) {
           const userData = await fetchProfile(session);
@@ -73,6 +85,7 @@ export const AuthProvider = ({ children }) => {
       } catch (err) {
         console.error('Session loading error:', err);
       } finally {
+        console.log('AuthContext: Setting loading to false');
         setLoading(false);
       }
     });

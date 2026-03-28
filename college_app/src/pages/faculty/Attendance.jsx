@@ -74,59 +74,59 @@ export default function Attendance() {
   const absentCount = students.length - presentCount;
 
   return (
-    <div className="space-y-6 animate-in fade-in duration-500 max-w-6xl mx-auto">
-
+    <div className="space-y-6 animate-in fade-in duration-700 max-w-7xl mx-auto pb-12">
       {/* Header */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+      <div className="bg-brand-primary border border-white/10 p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
+        <div className="absolute right-0 top-0 w-64 h-64 bg-brand-accent opacity-[0.05] rounded-full blur-[80px]" />
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 relative z-10">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Attendance Register</h1>
-            <p className="text-gray-500 text-sm mt-1">Select class and mark student attendance manually</p>
+            <h1 className="text-4xl font-black text-white tracking-tight">Attendance Register</h1>
+            <p className="text-slate-500 font-black text-[10px] mt-2 uppercase tracking-[0.3em] opacity-80">Manual Entry • Node Verification Protocol</p>
           </div>
-          <div className="flex flex-wrap gap-3 items-center">
-            <div className="flex items-center gap-2 bg-gray-50 p-1.5 rounded-lg border border-gray-200">
-              <input type="date" value={selectedDate} readOnly className="bg-transparent border-none text-sm font-bold text-gray-700 outline-none px-2" />
-              <div className="w-px h-6 bg-gray-300 mx-1"></div>
-              <select value={selectedSubject} onChange={(e) => setSelectedSubject(e.target.value)} className="bg-transparent border-none text-sm font-bold text-brand-dark outline-none cursor-pointer pr-2">
-                <option>Data Structures</option>
-                <option>Operating Systems</option>
-                <option>Algorithms</option>
+          <div className="flex flex-wrap gap-4 items-center">
+            <div className="flex items-center gap-4 bg-white/5 backdrop-blur-xl p-3 rounded-2xl border border-white/10 shadow-xl">
+              <input type="date" value={selectedDate} readOnly className="bg-transparent border-none text-xs font-black text-white outline-none px-4 [color-scheme:dark]" />
+              <div className="w-px h-8 bg-white/10 mx-1"></div>
+              <select value={selectedSubject} onChange={(e) => setSelectedSubject(e.target.value)} className="bg-transparent border-none text-xs font-black text-brand-accent outline-none cursor-pointer pr-4 appearance-none hover:text-white transition-colors">
+                <option className="bg-brand-primary">Data Structures</option>
+                <option className="bg-brand-primary">Operating Systems</option>
+                <option className="bg-brand-primary">Algorithms</option>
               </select>
             </div>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 mt-6 border-t border-gray-100 pt-6">
-          <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-gray-50 border border-gray-100">
-            <span className="text-gray-500 text-xs font-bold uppercase">Total</span>
-            <span className="text-2xl font-bold text-gray-900 mt-1 flex items-center gap-2"><Users size={20} className="text-gray-400" /> {students.length}</span>
+        <div className="grid grid-cols-3 gap-6 mt-10 border-t border-white/5 pt-10 relative z-10">
+          <div className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white/[0.03] border border-white/5 group hover:bg-white/[0.05] transition-all">
+            <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Total Nodes</span>
+            <span className="text-3xl font-black text-white mt-1 flex items-center gap-3"><Users size={24} className="text-slate-600" /> {students.length}</span>
           </div>
-          <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-green-50 border border-green-100">
-            <span className="text-green-600 text-xs font-bold uppercase">Present</span>
-            <span className="text-2xl font-bold text-green-700 mt-1 flex items-center gap-2"><CheckCircle2 size={20} className="text-green-500" /> {presentCount}</span>
+          <div className="flex flex-col items-center justify-center p-6 rounded-2xl bg-emerald-500/5 border border-emerald-500/10 group hover:bg-emerald-500/10 transition-all">
+            <span className="text-emerald-500 text-[10px] font-black uppercase tracking-widest">Present</span>
+            <span className="text-3xl font-black text-emerald-500 mt-1 flex items-center gap-3"><CheckCircle2 size={24} /> {presentCount}</span>
           </div>
-          <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-red-50 border border-red-100">
-            <span className="text-brand-primary text-xs font-bold uppercase">Absent</span>
-            <span className="text-2xl font-bold text-red-700 mt-1 flex items-center gap-2"><X size={20} className="text-red-500" /> {absentCount}</span>
+          <div className="flex flex-col items-center justify-center p-6 rounded-2xl bg-brand-accent/5 border border-brand-accent/10 group hover:bg-brand-accent/10 transition-all">
+            <span className="text-brand-accent text-[10px] font-black uppercase tracking-widest">Absent</span>
+            <span className="text-3xl font-black text-brand-accent mt-1 flex items-center gap-3"><X size={24} /> {absentCount}</span>
           </div>
         </div>
       </div>
 
       {/* Student List */}
-      <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
-        <div className="p-4 border-b border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="relative w-full sm:w-72">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><Search size={16} className="text-gray-400" /></div>
-            <input type="text" placeholder="Search by name or ID..." className="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-brand-primary/50 bg-gray-50" value={search} onChange={(e) => setSearch(e.target.value)} />
+      <div className="glass-panel rounded-[2.5rem] border border-white/5 overflow-hidden shadow-2xl">
+        <div className="px-10 py-8 border-b border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6 bg-white/[0.02]">
+          <div className="relative w-full sm:w-96 group">
+            <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none transition-colors group-focus-within:text-brand-accent"><Search size={18} className="text-slate-600" /></div>
+            <input type="text" placeholder="Search Institutional Nodes..." className="block w-full pl-14 pr-6 py-4 border border-white/10 rounded-2xl text-sm font-bold outline-none focus:ring-2 focus:ring-brand-accent/40 bg-white/5 text-white placeholder:text-slate-600 hover:bg-white/10 transition-all" value={search} onChange={(e) => setSearch(e.target.value)} />
           </div>
-          <div className="flex gap-3 w-full sm:w-auto">
-            <button onClick={() => markAll('present')} className="flex-1 sm:flex-none text-xs font-bold px-4 py-2 bg-green-100 text-green-700 hover:bg-green-200 rounded-lg transition">Mark All Present</button>
-            <button onClick={() => markAll('absent')} className="flex-1 sm:flex-none text-xs font-bold px-4 py-2 bg-red-100 text-red-700 hover:bg-red-200 rounded-lg transition">Mark All Absent</button>
+          <div className="flex gap-4 w-full sm:w-auto">
+            <button onClick={() => markAll('present')} className="flex-1 sm:flex-none text-[10px] font-black uppercase tracking-widest px-6 py-4 bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 hover:bg-emerald-500/20 rounded-2xl transition-all">Authorize All</button>
+            <button onClick={() => markAll('absent')} className="flex-1 sm:flex-none text-[10px] font-black uppercase tracking-widest px-6 py-4 bg-brand-accent/10 text-brand-accent border border-brand-accent/20 hover:bg-brand-accent/20 rounded-2xl transition-all">De-Authorize All</button>
           </div>
         </div>
 
-        <div className="p-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 max-h-[500px] overflow-y-auto bg-gray-50/50">
+        <div className="p-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 max-h-[600px] overflow-y-auto bg-transparent custom-scrollbar">
           {filteredStudents.map(student => {
             const status = markedStudents[student.id];
             const isPresent = status === 'present';
@@ -135,34 +135,36 @@ export default function Attendance() {
               <div
                 key={student.id}
                 onClick={() => toggleManual(student.id)}
-                className={`p-3 rounded-xl border flex items-center justify-between cursor-pointer transition-all duration-200 shadow-sm hover:shadow-md select-none ${
-                  isPresent ? 'bg-white border-green-200 border-l-4 border-l-green-500'
-                  : isAbsent ? 'bg-white border-red-200 border-l-4 border-l-brand-primary opacity-80'
-                  : 'bg-white border-gray-200 border-l-4 border-l-gray-300'
+                className={`p-5 rounded-[1.5rem] border flex items-center justify-between cursor-pointer transition-all duration-300 relative overflow-hidden group hover:scale-[1.02] ${
+                  isPresent ? 'bg-emerald-500/5 border-emerald-500/20 ring-1 ring-emerald-500/20'
+                  : isAbsent ? 'bg-brand-accent/5 border-brand-accent/20 ring-1 ring-brand-accent/20'
+                  : 'bg-white/[0.02] border-white/10 hover:border-white/20'
                 }`}
               >
-                <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${isPresent ? 'bg-green-50 text-green-600' : isAbsent ? 'bg-red-50 text-red-600' : 'bg-gray-100 text-gray-500'}`}>
+                <div className="absolute right-0 top-0 w-24 h-24 bg-white opacity-[0.02] rounded-full blur-2xl -mr-12 -mt-12 group-hover:opacity-[0.05] transition-opacity" />
+                
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center font-black text-base shadow-lg transition-transform group-active:scale-95 ${isPresent ? 'bg-emerald-500 text-white' : isAbsent ? 'bg-brand-accent text-white' : 'bg-slate-800 text-slate-500'}`}>
                     {student.name.charAt(0)}
                   </div>
                   <div>
-                    <p className={`font-bold text-sm ${!isAbsent ? 'text-gray-900' : 'text-gray-500'}`}>{student.name}</p>
-                    <p className="text-xs font-medium text-gray-400">{student.id}</p>
+                    <p className={`font-black text-sm tracking-tight ${!isAbsent ? 'text-white' : 'text-slate-500'}`}>{student.name}</p>
+                    <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest mt-0.5">{student.id.substring(0, 10)}</p>
                   </div>
                 </div>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isPresent ? 'bg-green-500 text-white' : isAbsent ? 'bg-brand-primary text-white' : 'bg-gray-200 text-gray-400'}`}>
-                  {isPresent ? <Check size={16} strokeWidth={3} /> : isAbsent ? <X size={16} strokeWidth={3} /> : <span className="text-xs font-bold">?</span>}
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all shadow-xl relative z-10 ${isPresent ? 'bg-emerald-500 text-white' : isAbsent ? 'bg-brand-accent text-white' : 'bg-slate-800 text-slate-600'}`}>
+                  {isPresent ? <Check size={20} strokeWidth={4} /> : isAbsent ? <X size={20} strokeWidth={4} /> : <div className="w-1.5 h-1.5 rounded-full bg-slate-600"></div>}
                 </div>
               </div>
             );
           })}
         </div>
 
-        <div className="p-4 bg-white border-t border-gray-100 flex items-center justify-between gap-4">
-          {submitted && <p className="text-green-600 font-bold text-sm flex items-center gap-2"><CheckCircle2 size={16} /> Attendance submitted successfully!</p>}
-          {!submitted && <button className="text-sm font-bold text-gray-500 hover:text-gray-700 flex items-center gap-2"><History size={16} /> View Past Records</button>}
-          <button onClick={handleSubmit} disabled={submitted} className="px-8 py-3 bg-brand-dark text-white font-bold rounded-xl shadow-lg hover:bg-gray-800 transition transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed">
-            Submit Attendance
+        <div className="p-10 bg-white/[0.02] border-t border-white/5 flex items-center justify-between gap-6">
+          {submitted && <p className="text-emerald-500 font-black text-xs uppercase tracking-widest flex items-center gap-3 animate-in fade-in slide-in-from-left-4"><CheckCircle2 size={18} /> Records synchronized!</p>}
+          {!submitted && <button className="text-[10px] font-black text-slate-500 hover:text-white uppercase tracking-widest flex items-center gap-3 transition-colors"><History size={18} /> Protocol Logs</button>}
+          <button onClick={handleSubmit} disabled={loading || submitted} className="px-12 py-5 bg-brand-accent text-white font-black text-[11px] uppercase tracking-[0.2em] rounded-2xl shadow-2xl shadow-brand-accent/20 hover:bg-[#b91c1c] hover:translate-y-[-2px] transition-all transform disabled:opacity-50 disabled:translate-y-0 disabled:shadow-none">
+            {loading ? 'Transmitting...' : 'Authorize Submission'}
           </button>
         </div>
       </div>

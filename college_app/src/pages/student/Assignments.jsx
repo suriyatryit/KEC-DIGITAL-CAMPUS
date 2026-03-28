@@ -69,59 +69,59 @@ export default function Assignments() {
 
   return (
     <>
-      <div className="space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-700 max-w-5xl mx-auto pb-12">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-8 rounded-3xl border border-[var(--glass-border)] bg-gradient-to-r from-[var(--glass-bg)] to-transparent relative overflow-hidden">
-          <div className="absolute -inset-4 bg-gradient-to-r from-brand-primary to-primary-600 rounded-full blur-[40px] opacity-10 pointer-events-none"></div>
+      <div className="space-y-6 animate-in fade-in duration-700 max-w-7xl mx-auto pb-12">
+        <div className="bg-brand-primary border border-white/10 p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="absolute right-0 top-0 w-64 h-64 bg-brand-accent opacity-[0.05] rounded-full blur-[80px]" />
           <div className="relative z-10">
-            <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400 tracking-tight">Assignments</h1>
-            <p className="text-slate-600 dark:text-slate-400 font-medium text-sm mt-2">Submit and track your academic coursework</p>
+            <h1 className="text-4xl font-black text-white tracking-tight">Mission Briefings</h1>
+            <p className="text-[10px] text-slate-500 font-black uppercase tracking-[0.3em] mt-2 opacity-80">Academic Coursework & Submission Protocols</p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5">
+        <div className="grid grid-cols-1 gap-4">
            {assignments.map((task, index) => (
-              <div key={task.id} className="glass-panel p-6 sm:p-8 rounded-3xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover-lift relative overflow-hidden group" style={{ animationDelay: `${index * 100}ms` }}>
-                 <div className={`absolute top-1/2 left-0 w-32 h-32 rounded-full blur-[40px] -ml-16 -mt-16 transition-colors duration-500 pointer-events-none ${task.status === 'Submitted' ? 'bg-emerald-500/10 group-hover:bg-emerald-500/20' : 'bg-brand-primary/10 group-hover:bg-brand-primary/20'}`}></div>
+              <div key={task.id} className="glass-panel p-8 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-8 group relative overflow-hidden transition-all hover:bg-white/[0.03] border border-white/5" style={{ animationDelay: `${index * 100}ms` }}>
+                 <div className={`absolute top-0 right-0 w-32 h-32 rounded-full blur-[60px] -mr-16 -mt-16 opacity-[0.05] transition-opacity duration-500 ${task.status === 'Submitted' ? 'bg-emerald-500' : 'bg-brand-accent'}`}></div>
 
-                 <div className="flex items-start gap-5 flex-1 relative z-10">
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border border-[var(--glass-border)] shadow-lg ring-1 ring-black/5 group-hover:scale-110 transition-transform duration-500 ${
-                       task.status === 'Submitted' ? 'bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 text-emerald-500' : 'bg-gradient-to-br from-[var(--bg-secondary)] to-[var(--bg-primary)] text-brand-primary'
+                 <div className="flex items-center gap-8 flex-1 relative z-10">
+                    <div className={`w-16 h-16 rounded-[1.5rem] flex items-center justify-center shrink-0 shadow-2xl transition-transform duration-500 group-hover:scale-110 ${
+                       task.status === 'Submitted' ? 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20' : 'bg-brand-accent/10 text-brand-accent border border-brand-accent/20'
                     }`}>
-                       {task.status === 'Submitted' ? <CheckCircle size={26} /> : <FileText size={26} />}
+                       {task.status === 'Submitted' ? <CheckCircle size={28} strokeWidth={2.5} /> : <FileText size={28} strokeWidth={2.5} />}
                     </div>
                     <div>
-                       <h3 className="font-bold text-slate-900 dark:text-white text-xl tracking-tight mb-1">{task.title}</h3>
-                       <p className="text-sm font-semibold text-slate-600 dark:text-slate-400">{task.subject}</p>
+                       <h3 className="font-black text-white text-xl tracking-tight mb-1">{task.title}</h3>
+                       <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{task.subject}</p>
                        
-                       <div className="flex items-center gap-3 mt-4">
+                       <div className="flex items-center gap-4 mt-6">
                           {task.status === 'Pending' ? (
-                             <span className="flex items-center gap-1.5 text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 px-3 py-1.5 rounded-lg backdrop-blur-sm">
-                                <AlertCircle size={14} /> Due {task.dueDate}
+                             <span className="flex items-center gap-2 text-[10px] font-black bg-brand-accent/5 text-brand-accent border border-brand-accent/20 px-4 py-2 rounded-xl uppercase tracking-widest">
+                                <Clock size={16} /> Deadline: {task.dueDate}
                              </span>
                           ) : (
-                             <span className="flex items-center gap-1.5 text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 px-3 py-1.5 rounded-lg backdrop-blur-sm">
-                                <CheckCircle size={14} /> Submitted ({task.score})
+                             <span className="flex items-center gap-2 text-[10px] font-black bg-emerald-500/5 text-emerald-500 border border-emerald-500/20 px-4 py-2 rounded-xl uppercase tracking-widest">
+                                <CheckCircle size={16} /> Status: Synchronized
                              </span>
                           )}
-                          <span className="text-xs font-bold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-white/10 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 shadow-sm">{task.type || 'Standard'}</span>
+                          <span className="text-[10px] font-black text-slate-600 bg-white/5 px-4 py-2 rounded-xl border border-white/5 uppercase tracking-widest">Type: {task.type || 'Standard'}</span>
                        </div>
                     </div>
                  </div>
                  
-                 <div className="w-full md:w-auto mt-4 md:mt-0 relative z-10 pt-4 md:pt-0 border-t border-slate-200 dark:border-white/10 md:border-none">
-                   {task.status === 'Pending' ? (
-                     <label className="w-full md:w-auto flex justify-center items-center gap-2 px-6 py-3 bg-gradient-to-r from-brand-primary to-primary-600 text-white text-sm font-bold rounded-xl hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all hover-lift cursor-pointer">
-                       <Upload size={18} /> Submit Work
-                       <input type="file" className="hidden" onChange={(e) => handleFileUpload(e, task.id)} />
-                     </label>
-                   ) : (
-                     <button 
-                       onClick={() => setViewingTask(task)}
-                       className="w-full md:w-auto flex justify-center items-center gap-2 px-6 py-3 bg-white/50 dark:bg-black/20 text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 text-sm font-bold rounded-xl hover:bg-white dark:hover:bg-white/10 hover:shadow-md transition-all"
-                     >
-                       <Eye size={18} /> View Submission
-                     </button>
-                   )}
+                 <div className="w-full md:w-auto mt-4 md:mt-0 relative z-10">
+                    {task.status === 'Pending' ? (
+                      <label className="w-full md:w-auto flex justify-center items-center gap-3 px-10 py-5 bg-brand-accent text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-[#b91c1c] transition-all shadow-2xl shadow-brand-accent/20 cursor-pointer hover:translate-y-[-2px]">
+                        <Upload size={18} /> Transmit Work
+                        <input type="file" className="hidden" onChange={(e) => handleFileUpload(e, task.id)} />
+                      </label>
+                    ) : (
+                      <button 
+                        onClick={() => setViewingTask(task)}
+                        className="w-full md:w-auto flex justify-center items-center gap-3 px-10 py-5 bg-white/5 text-white border border-white/10 text-[10px] font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-white/10 transition-all"
+                      >
+                        <Eye size={18} /> Inspect Asset
+                      </button>
+                    )}
                  </div>
               </div>
            ))}
@@ -130,29 +130,29 @@ export default function Assignments() {
 
       {/* Document Viewer Modal */}
       {viewingTask && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-300">
-          <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setViewingTask(null)}></div>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-10 animate-in fade-in duration-300">
+          <div className="absolute inset-0 bg-[#050A14]/90 backdrop-blur-xl" onClick={() => setViewingTask(null)}></div>
           
-          <div className="relative w-full max-w-4xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl overflow-hidden flex flex-col h-[85vh] animate-in zoom-in-95 duration-300">
+          <div className="relative w-full max-w-6xl bg-brand-primary rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col h-[90vh] animate-in zoom-in-95 duration-300 border border-white/10">
             {/* Modal Header */}
-            <div className="flex items-center justify-between p-4 sm:p-6 border-b border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-slate-800/50">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary flex items-center justify-center shrink-0">
-                  <FileText size={24} />
+            <div className="flex items-center justify-between p-10 border-b border-white/5 bg-white/[0.02]">
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 text-brand-accent flex items-center justify-center shrink-0">
+                  <FileText size={28} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 dark:text-white text-lg">{viewingTask.title}</h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 font-medium">{viewingTask.subject} • Submitted Document</p>
+                  <h3 className="font-black text-white text-xl tracking-tight leading-tight">{viewingTask.title}</h3>
+                  <p className="text-[10px] text-slate-500 font-black uppercase tracking-widest mt-1">{viewingTask.subject} • Validated Asset</p>
                 </div>
               </div>
               
-              <div className="flex items-center gap-2">
-                <button className="p-2 sm:px-4 sm:py-2 flex items-center gap-2 rounded-xl bg-brand-primary text-white font-bold text-sm hover:bg-primary-600 transition-colors">
-                  <Download size={18} /> <span className="hidden sm:inline">Download PDF</span>
+              <div className="flex items-center gap-4">
+                <button className="px-8 py-4 flex items-center gap-3 rounded-2xl bg-brand-accent text-white font-black text-[10px] uppercase tracking-widest hover:bg-[#b91c1c] transition-all shadow-2xl shadow-brand-accent/20">
+                  <Download size={18} /> Export Index
                 </button>
                 <button 
                   onClick={() => setViewingTask(null)}
-                  className="p-2 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-xl transition-colors"
+                  className="p-4 text-slate-500 hover:bg-white/10 hover:text-white rounded-2xl transition-all"
                 >
                   <X size={24} />
                 </button>

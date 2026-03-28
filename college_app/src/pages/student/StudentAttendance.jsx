@@ -54,44 +54,45 @@ export default function StudentAttendance() {
   const overallPercentage = overallTotal > 0 ? Math.round((overallAttended / overallTotal) * 100) : 0;
 
   return (
-    <div className="space-y-6 animate-in fade-in duration-500 max-w-5xl mx-auto">
+    <div className="space-y-6 animate-in fade-in duration-700 max-w-7xl mx-auto pb-12">
       {/* Header */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">My Attendance</h1>
-          <p className="text-gray-500 text-sm mt-1">Subject-wise breakdown overview</p>
+      <div className="bg-brand-primary border border-white/10 p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="absolute right-0 top-0 w-64 h-64 bg-brand-accent opacity-[0.05] rounded-full blur-[80px]" />
+        <div className="relative z-10">
+          <h1 className="text-4xl font-black text-white tracking-tight">Institutional Attendance</h1>
+          <p className="text-slate-500 font-black text-[10px] mt-2 uppercase tracking-[0.3em] opacity-80">Subject-wise breakdown overview</p>
         </div>
-        <div className="flex items-center gap-4 bg-gray-50 px-6 py-4 rounded-xl border border-gray-200">
+        <div className="flex items-center gap-8 bg-white/5 backdrop-blur-xl px-10 py-6 rounded-3xl border border-white/10 relative z-10 shadow-2xl">
           <div>
-            <p className="text-sm font-medium text-gray-500">Overall Attendance</p>
-            <h2 className="text-3xl font-bold text-brand-dark">{overallPercentage}%</h2>
+            <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">AGGREGATE UPTIME</p>
+            <h2 className="text-4xl font-black text-white tracking-tighter">{overallPercentage}%</h2>
           </div>
-          <div className={`w-14 h-14 rounded-full flex items-center justify-center border-4 ${overallPercentage >= 75 ? 'border-green-500 text-green-500' : 'border-brand-primary text-brand-primary'}`}>
-            {overallPercentage >= 75 ? <CheckCircle size={24} /> : <AlertTriangle size={24} />}
+          <div className={`w-16 h-16 rounded-2xl flex items-center justify-center border border-white/10 shadow-2xl ${overallPercentage >= 75 ? 'bg-emerald-500/10 text-emerald-500' : 'bg-brand-accent/10 text-brand-accent'}`}>
+            {overallPercentage >= 75 ? <CheckCircle size={32} /> : <AlertTriangle size={32} />}
           </div>
         </div>
       </div>
 
       {/* View Toggle + Attendance Table/Cards */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-          <h2 className="font-bold text-gray-900 text-base">Subject-wise Attendance</h2>
-          <div className="flex items-center gap-1 bg-gray-100 p-1 rounded-lg">
+      <div className="glass-panel rounded-[2.5rem] overflow-hidden border border-white/5">
+        <div className="flex items-center justify-between px-10 py-6 border-b border-white/5 bg-white/[0.02]">
+          <h2 className="font-black text-white text-xs uppercase tracking-[0.2em]">Subject-wise Vector Analysis</h2>
+          <div className="flex items-center gap-1 bg-white/5 p-1 rounded-xl border border-white/5">
             <button
               onClick={() => setView('table')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-bold transition ${
-                view === 'table' ? 'bg-white text-brand-primary shadow-sm' : 'text-gray-500 hover:text-gray-700'
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all ${
+                view === 'table' ? 'bg-brand-accent text-white shadow-lg shadow-brand-accent/20' : 'text-slate-500 hover:text-white'
               }`}
             >
-              <TableProperties size={13} /> Table
+              <TableProperties size={14} /> Matrix
             </button>
             <button
               onClick={() => setView('cards')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-bold transition ${
-                view === 'cards' ? 'bg-white text-brand-primary shadow-sm' : 'text-gray-500 hover:text-gray-700'
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all ${
+                view === 'cards' ? 'bg-brand-accent text-white shadow-lg shadow-brand-accent/20' : 'text-slate-500 hover:text-white'
               }`}
             >
-              <LayoutList size={13} /> Cards
+              <LayoutList size={14} /> Nodes
             </button>
           </div>
         </div>
@@ -100,44 +101,44 @@ export default function StudentAttendance() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-gray-50 border-b border-gray-100">
-                  <th className="text-left px-6 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">#</th>
-                  <th className="text-left px-6 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Subject</th>
-                  <th className="text-center px-6 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Total Sessions</th>
-                  <th className="text-center px-6 py-3 text-xs font-bold text-green-600 uppercase tracking-wider">Present</th>
-                  <th className="text-center px-6 py-3 text-xs font-bold text-brand-primary uppercase tracking-wider">Absent</th>
-                  <th className="text-center px-6 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">%</th>
-                  <th className="text-center px-6 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Status</th>
+                <tr className="bg-white/[0.03] border-b border-white/5">
+                  <th className="text-left px-10 py-5 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">#</th>
+                  <th className="text-left px-10 py-5 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Subject Node</th>
+                  <th className="text-center px-10 py-5 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Total SESS</th>
+                  <th className="text-center px-10 py-5 text-[10px] font-black text-emerald-500 uppercase tracking-[0.2em]">Uptime</th>
+                  <th className="text-center px-10 py-5 text-[10px] font-black text-brand-accent uppercase tracking-[0.2em]">Downtime</th>
+                  <th className="text-center px-10 py-5 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Ratio (%)</th>
+                  <th className="text-center px-10 py-5 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">integrity</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-50">
+              <tbody className="divide-y divide-white/5">
                 {attendanceData.map((item, idx) => {
                   const isLow = item.percentage < 75;
                   const absent = item.total - item.attended;
                   return (
-                    <tr key={item.id} className="hover:bg-gray-50/80 transition">
-                      <td className="px-6 py-4 text-gray-400 font-medium">{idx + 1}</td>
-                      <td className="px-6 py-4 font-bold text-gray-900">{item.subject}</td>
-                      <td className="px-6 py-4 text-center font-bold text-gray-700">{item.total}</td>
-                      <td className="px-6 py-4 text-center">
-                        <span className="font-bold text-green-600">{item.attended}</span>
+                    <tr key={item.id} className="hover:bg-white/[0.04] transition-colors group">
+                      <td className="px-10 py-6 text-slate-600 font-bold text-xs">{idx + 1}</td>
+                      <td className="px-10 py-6 font-black text-white text-base tracking-tight">{item.subject}</td>
+                      <td className="px-10 py-6 text-center font-black text-slate-400">{item.total}</td>
+                      <td className="px-10 py-6 text-center">
+                        <span className="font-black text-emerald-500">{item.attended}</span>
                       </td>
-                      <td className="px-6 py-4 text-center">
-                        <span className="font-bold text-brand-primary">{absent}</span>
+                      <td className="px-10 py-6 text-center">
+                        <span className="font-black text-brand-accent">{absent}</span>
                       </td>
-                      <td className="px-6 py-4 text-center">
-                        <div className="flex flex-col items-center gap-1">
-                          <span className={`font-black text-sm ${isLow ? 'text-brand-primary' : 'text-green-600'}`}>{item.percentage}%</span>
-                          <div className="w-16 bg-gray-200 rounded-full h-1.5">
-                            <div className={`h-1.5 rounded-full ${isLow ? 'bg-brand-primary' : 'bg-green-500'}`} style={{ width: `${item.percentage}%` }}></div>
+                      <td className="px-10 py-6 text-center">
+                        <div className="flex flex-col items-center gap-2">
+                          <span className={`font-black text-sm tracking-tighter ${isLow ? 'text-brand-accent' : 'text-emerald-500'}`}>{item.percentage}%</span>
+                          <div className="w-20 bg-white/5 rounded-full h-1.5 border border-white/5 overflow-hidden">
+                            <div className={`h-full rounded-full ${isLow ? 'bg-brand-accent shadow-[0_0_10px_rgba(153,27,27,0.5)]' : 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]'}`} style={{ width: `${item.percentage}%` }}></div>
                           </div>
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-center">
-                        <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold ${
-                          isLow ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'
+                      <td className="px-10 py-6 text-center">
+                        <span className={`inline-flex items-center px-4 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest border ${
+                          isLow ? 'bg-brand-accent/10 text-brand-accent border-brand-accent/20' : 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20'
                         }`}>
-                          {isLow ? '⚠ Low' : '✓ Good'}
+                          {isLow ? '⚠ Risk' : '✓ Secure'}
                         </span>
                       </td>
                     </tr>

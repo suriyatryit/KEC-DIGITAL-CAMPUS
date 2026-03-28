@@ -18,92 +18,93 @@ export default function StudentMonitoring() {
   );
 
   return (
-    <div className="space-y-6 animate-in fade-in duration-500">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-white p-6 rounded-2xl shadow-sm border border-gray-100 gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Student Monitoring</h1>
-          <p className="text-gray-500 text-sm mt-1">Track academic performance and identify at-risk students</p>
+    <div className="space-y-6 animate-in fade-in duration-700 max-w-7xl mx-auto pb-12">
+      <div className="bg-brand-primary border border-white/10 p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="absolute right-0 top-0 w-64 h-64 bg-brand-accent opacity-[0.05] rounded-full blur-[80px]" />
+        <div className="relative z-10">
+          <h1 className="text-4xl font-black text-white tracking-tight">Node Surveillance</h1>
+          <p className="text-[10px] text-slate-500 font-black uppercase tracking-[0.3em] mt-2 opacity-80">Academic Trajectory & Risk Mitigation Protocol</p>
         </div>
-        <div className="flex gap-3 w-full md:w-auto">
-          <div className="relative flex-1 md:w-64">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+        <div className="relative z-10 flex gap-4 w-full md:w-auto">
+          <div className="relative w-full md:w-80 group">
+            <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-600 transition-colors group-focus-within:text-brand-accent" size={20} />
             <input 
               type="text" 
-              placeholder="Search by name or ID..." 
-              className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-primary/50 focus:border-brand-primary outline-none transition"
+              placeholder="Search Student Hub..." 
+              className="w-full pl-14 pr-6 py-4 rounded-2xl border border-white/10 outline-none bg-white/5 text-white font-black text-xs placeholder:text-slate-600 focus:ring-2 focus:ring-brand-accent/40 hover:bg-white/[0.08] transition-all"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          <button className="p-2 border border-gray-200 rounded-lg text-gray-500 hover:bg-gray-50 flex items-center gap-2 px-4 shadow-sm">
-            <Filter size={18} /> <span className="hidden sm:inline">Filter</span>
+          <button className="p-4 bg-white/5 border border-white/10 rounded-2xl text-slate-500 hover:text-white hover:bg-white/10 transition-all flex items-center gap-3 px-6 shadow-2xl">
+            <Filter size={20} /> <span className="text-[10px] font-black uppercase tracking-widest">Filter</span>
           </button>
         </div>
       </div>
 
-      <div className="glass-panel rounded-2xl overflow-hidden border border-gray-200">
-        <div className="p-4 border-b border-gray-100 bg-gray-50/50 flex justify-between items-center">
-           <h3 className="font-bold text-gray-700">Performance Metrics Overview</h3>
-           <div className="flex gap-4 text-sm font-medium">
-             <span className="flex items-center gap-1 text-red-600"><AlertTriangle size={14} /> 12 Critical</span>
-             <span className="flex items-center gap-1 text-green-600"><TrendingUp size={14} /> 145 Excellent</span>
+      <div className="glass-panel rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl">
+        <div className="px-10 py-8 border-b border-white/5 bg-white/[0.02] flex justify-between items-center">
+           <h3 className="text-xl font-black text-white tracking-tight">Matrix Performance Metrics</h3>
+           <div className="flex gap-6">
+             <span className="flex items-center gap-2 text-[10px] font-black text-brand-accent uppercase tracking-widest bg-brand-accent/5 px-4 py-2 rounded-xl border border-brand-accent/20"><AlertTriangle size={16} /> 12 Critical</span>
+             <span className="flex items-center gap-2 text-[10px] font-black text-emerald-500 uppercase tracking-widest bg-emerald-500/5 px-4 py-2 rounded-xl border border-emerald-500/20"><TrendingUp size={16} /> 145 Excellent</span>
            </div>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-gray-50/80 border-b border-gray-200">
-                <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Student Details</th>
-                <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Semester</th>
-                <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Attendance</th>
-                <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">SGPA</th>
-                <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Status</th>
-                <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-right">Actions</th>
+              <tr className="bg-white/[0.03] border-b border-white/5">
+                <th className="px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Student Unit</th>
+                <th className="px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Temporal Sem</th>
+                <th className="px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Presence Index</th>
+                <th className="px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">SGPA Rating</th>
+                <th className="px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Class Status</th>
+                <th className="px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] text-right">System Action</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100 bg-white">
+            <tbody className="divide-y divide-white/5">
               {filteredStudents.map((student) => (
-                <tr key={student.id} className="hover:bg-gray-50/50 transition">
-                  <td className="px-6 py-4 whitespace-nowrap">
+                <tr key={student.id} className="hover:bg-white/[0.02] transition-colors group">
+                  <td className="px-10 py-6 whitespace-nowrap">
                     <div className="flex items-center">
-                      <div className="h-10 w-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold mr-3">
+                      <div className="h-12 w-12 rounded-2xl bg-white/5 text-brand-accent flex items-center justify-center font-black text-lg border border-white/10 shadow-2xl mr-5 group-hover:scale-110 transition-transform">
                         {student.name.charAt(0)}
                       </div>
                       <div>
-                        <div className="font-bold text-gray-900">{student.name}</div>
-                        <div className="text-xs text-gray-500">{student.id}</div>
+                        <div className="font-black text-white text-base tracking-tight">{student.name}</div>
+                        <div className="text-[10px] text-slate-500 font-black uppercase tracking-widest mt-1">{student.id}</div>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 font-medium">
+                  <td className="px-10 py-6 whitespace-nowrap text-[11px] text-white font-black uppercase tracking-widest">
                     Sem {student.semester}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center gap-2">
-                       <div className="w-full bg-gray-200 rounded-full h-1.5 w-16">
-                         <div className={`h-1.5 rounded-full ${student.attendance < 75 ? 'bg-red-500' : 'bg-green-500'}`} style={{ width: `${student.attendance}%` }}></div>
+                  <td className="px-10 py-6 whitespace-nowrap">
+                    <div className="flex items-center gap-3">
+                       <div className="w-32 bg-white/5 rounded-full h-2 border border-white/5 p-0.5">
+                         <div className={`h-full rounded-full ${student.attendance < 75 ? 'bg-brand-accent' : 'bg-emerald-500'}`} style={{ width: `${student.attendance}%` }}></div>
                        </div>
-                       <span className={`text-sm font-bold ${student.attendance < 75 ? 'text-red-600' : 'text-gray-700'}`}>{student.attendance}%</span>
+                       <span className={`text-[10px] font-black ${student.attendance < 75 ? 'text-brand-accent' : 'text-slate-400'}`}>{student.attendance}%</span>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`text-sm font-bold ${student.sgpa < 6.0 ? 'text-red-600 flex items-center gap-1' : 'text-gray-900 flex items-center gap-1'}`}>
+                  <td className="px-10 py-6 whitespace-nowrap">
+                    <span className={`text-[11px] font-black flex items-center gap-2 ${student.sgpa < 6.0 ? 'text-brand-accent' : 'text-white'}`}>
                        {student.sgpa}
-                       {student.sgpa < 6.0 ? <TrendingDown size={14} className="text-red-500" /> : <TrendingUp size={14} className="text-green-500" />}
+                       {student.sgpa < 6.0 ? <TrendingDown size={16} className="text-brand-accent" /> : <TrendingUp size={16} className="text-emerald-500" />}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`px-2 py-1 inline-flex text-xs leading-5 font-bold rounded-lg ${
-                      student.status === 'Critical' ? 'bg-red-100 text-red-800 border border-red-200' :
-                      student.status === 'Excellent' ? 'bg-green-100 text-green-800 border border-green-200' :
-                      student.status === 'Average' ? 'bg-yellow-100 text-yellow-800 border border-yellow-200' :
-                      'bg-blue-100 text-blue-800 border border-blue-200'
+                  <td className="px-10 py-6 whitespace-nowrap">
+                    <span className={`px-4 py-2 text-[9px] font-black uppercase tracking-[0.2em] rounded-xl border ${
+                      student.status === 'Critical' ? 'bg-brand-accent/10 text-brand-accent border-brand-accent/20' :
+                      student.status === 'Excellent' ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20' :
+                      student.status === 'Average' ? 'bg-amber-500/10 text-amber-500 border-amber-500/20' :
+                      'bg-white/5 text-slate-400 border-white/10'
                     }`}>
                       {student.status}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                     <button className="text-brand-primary hover:underline font-bold text-xs bg-brand-primary/10 px-3 py-1.5 rounded-md hover:bg-brand-primary/20 transition">View Report</button>
+                  <td className="px-10 py-6 whitespace-nowrap text-right">
+                     <button className="text-[10px] font-black text-brand-accent hover:text-white hover:bg-brand-accent bg-brand-accent/10 px-6 py-3 rounded-xl border border-brand-accent/20 transition-all uppercase tracking-widest">Inspect Report</button>
                   </td>
                 </tr>
               ))}

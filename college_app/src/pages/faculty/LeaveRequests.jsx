@@ -74,36 +74,37 @@ export default function LeaveRequests() {
   const pendingCount = leaves.filter(l => l.status === 'pending').length;
 
   return (
-    <div className="space-y-6 animate-in fade-in duration-500 max-w-6xl mx-auto">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-white p-6 rounded-2xl shadow-sm border border-gray-100 gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-             <div className="bg-brand-primary text-white p-2 rounded-xl shadow-md"><FilePenLine size={20} /></div>
-             Leave Approvals
+    <div className="space-y-6 animate-in fade-in duration-700 max-w-7xl mx-auto pb-12 relative">
+      <div className="bg-brand-primary border border-white/10 p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="absolute right-0 top-0 w-64 h-64 bg-brand-accent opacity-[0.05] rounded-full blur-[80px]" />
+        <div className="relative z-10">
+          <h1 className="text-4xl font-black text-white tracking-tight flex items-center gap-6">
+             <div className="bg-brand-accent/10 text-brand-accent p-4 rounded-2xl border border-brand-accent/20 shadow-2xl"><FilePenLine size={28} /></div>
+             Clearance Protocols
           </h1>
-          <p className="text-gray-500 text-sm mt-1">Review and manage leave requests from students and faculty</p>
+          <p className="text-[10px] text-slate-500 font-black uppercase tracking-[0.3em] mt-3 opacity-80">Review and Authorize Personnel Leave Requests</p>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><Search size={16} className="text-gray-400" /></div>
-            <input type="text" placeholder="Search applicant..." value={search} onChange={e => setSearch(e.target.value)}
-              className="pl-9 pr-3 py-2 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-brand-primary/40" />
+        <div className="relative z-10 flex items-center gap-4 w-full md:w-auto">
+          <div className="relative w-full md:w-80 group">
+            <Search size={20} className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-600 group-focus-within:text-brand-accent transition-colors" />
+            <input type="text" placeholder="Search Applicant Hub..." value={search} onChange={e => setSearch(e.target.value)}
+              className="w-full pl-14 pr-6 py-4 border border-white/10 rounded-2xl outline-none bg-white/5 text-white font-black text-xs placeholder:text-slate-600 focus:ring-2 focus:ring-brand-accent/40 hover:bg-white/[0.08] transition-all" />
           </div>
           <select value={filter} onChange={e => setFilter(e.target.value)}
-             className="px-3 py-2 text-sm border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-brand-primary/40 bg-gray-50 font-medium">
-             <option value="all">All Requests</option>
-             <option value="pending">Pending ({pendingCount})</option>
-             <option value="approved">Approved</option>
-             <option value="rejected">Rejected</option>
+             className="px-6 py-4 text-xs font-black uppercase tracking-widest border border-white/10 rounded-2xl outline-none focus:ring-2 focus:ring-brand-accent/40 bg-white/5 text-white cursor-pointer hover:bg-white/10 transition-all appearance-none pr-10">
+             <option value="all" className="bg-brand-primary text-white">All Protocols</option>
+             <option value="pending" className="bg-brand-primary text-white">Pending ({pendingCount})</option>
+             <option value="approved" className="bg-brand-primary text-white">Authorized</option>
+             <option value="rejected" className="bg-brand-primary text-white">Denied</option>
           </select>
         </div>
       </div>
 
-      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+      <div className="glass-panel rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
         {filteredLeaves.length === 0 ? (
-          <div className="py-16 text-center text-gray-400 text-sm">No leave requests match your filters.</div>
+          <div className="py-24 text-center text-slate-500 text-[10px] font-black uppercase tracking-[0.3em]">No clearance requests synchronized in this sector.</div>
         ) : (
-           <div className="divide-y divide-gray-100">
+           <div className="divide-y divide-white/5">
               {filteredLeaves.map(leave => {
                 const cfg = statusConfig[leave.status];
                 const StatusIcon = cfg.icon;
@@ -112,41 +113,53 @@ export default function LeaveRequests() {
                 const duration = Math.max(1, Math.round((new Date(leave.end_date) - new Date(leave.start_date)) / 86400000) + 1);
 
                 return (
-                  <div key={leave.id} className="p-6 hover:bg-gray-50 transition flex flex-col md:flex-row justify-between gap-6">
-                     <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <h3 className="font-bold text-gray-900 text-lg">{studentName}</h3>
-                          <span className={`text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded ${studentRole === 'faculty' ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-700'}`}>{studentRole}</span>
-                          <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold ${cfg.cls}`}>
-                             <StatusIcon size={12} /> {cfg.label}
-                          </span>
-                        </div>
-                        
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
-                          <div>
-                             <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Leave Duration</p>
-                             <p className="text-sm text-gray-600 flex items-center gap-1.5 mt-0.5"><CalendarIcon size={14} className="text-gray-400" /> {formatDate(leave.start_date)} {leave.start_date !== leave.end_date ? `to ${formatDate(leave.end_date)}` : ''} ({duration} day{duration > 1 ? 's' : ''})</p>
+                  <div key={leave.id} className="p-8 hover:bg-white/[0.02] transition-colors flex flex-col md:flex-row justify-between gap-8 group">
+                     <div className="flex-1 relative overflow-hidden">
+                        <div className="flex items-center gap-6 mb-6">
+                          <div className="h-14 w-14 rounded-2xl bg-white/5 text-brand-accent flex items-center justify-center font-black text-xl border border-white/10 shadow-2xl group-hover:scale-110 transition-transform">
+                            {studentName.charAt(0)}
                           </div>
                           <div>
-                             <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Reason</p>
-                             <p className="text-sm text-gray-700 bg-gray-100 px-3 py-2 rounded-lg">{leave.reason}</p>
+                            <h3 className="font-black text-white text-xl tracking-tight leading-tight mb-1">{studentName}</h3>
+                            <div className="flex items-center gap-4">
+                              <span className={`text-[9px] uppercase tracking-widest font-black px-3 py-1 rounded-lg border ${studentRole === 'faculty' ? 'bg-brand-accent/10 text-brand-accent border-brand-accent/20' : 'bg-white/5 text-slate-500 border-white/10'}`}>{studentRole} Index</span>
+                              <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-xl text-[9px] font-black uppercase tracking-widest border ${
+                                leave.status === 'approved' ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20' :
+                                leave.status === 'pending' ? 'bg-amber-500/10 text-amber-500 border-amber-500/20' :
+                                'bg-brand-accent/10 text-brand-accent border-brand-accent/20'
+                              }`}>
+                                 <StatusIcon size={14} /> {leave.status}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6">
+                          <div className="p-6 bg-white/[0.02] rounded-2xl border border-white/5">
+                             <p className="text-[9px] text-slate-500 font-black uppercase tracking-[0.2em] mb-3">Temporal Duration</p>
+                             <p className="text-sm text-white font-bold flex items-center gap-3"><CalendarIcon size={16} className="text-brand-accent" /> {formatDate(leave.start_date)} {leave.start_date !== leave.end_date ? `→ ${formatDate(leave.end_date)}` : ''} <span className="text-slate-500 ml-2">({duration} Units)</span></p>
+                          </div>
+                          <div className="p-6 bg-white/[0.02] rounded-2xl border border-white/5">
+                             <p className="text-[9px] text-slate-500 font-black uppercase tracking-[0.2em] mb-3">Mission Intelligence (Reason)</p>
+                             <p className="text-sm text-slate-300 leading-relaxed font-medium italic">"{leave.reason}"</p>
                           </div>
                         </div>
                         
                         {leave.remarks && (
-                          <div className="mt-3 text-sm text-gray-500 bg-orange-50/50 p-2 rounded border border-orange-100">
-                            <span className="font-bold text-gray-700">Approver Remarks:</span> {leave.remarks}
+                          <div className="mt-6 text-[10px] text-slate-400 font-black uppercase tracking-widest bg-brand-accent/5 p-4 rounded-xl border border-brand-accent/10 flex items-center gap-3">
+                            <div className="w-1.5 h-4 bg-brand-accent rounded-full" />
+                            <span className="text-brand-accent opacity-80 mr-2">Lead Analyst Remarks:</span> {leave.remarks}
                           </div>
                         )}
                      </div>
                      
                      {leave.status === 'pending' && (
-                        <div className="flex flex-row md:flex-col gap-2 shrink-0 border-t md:border-t-0 md:border-l border-gray-100 pt-4 md:pt-0 md:pl-6 justify-center">
-                          <button onClick={() => handleAction(leave.id, 'approved')} className="flex-1 px-4 py-2 bg-green-50 text-green-700 border border-green-200 font-bold text-sm rounded-lg hover:bg-green-100 transition shadow-sm">
-                            Approve
+                        <div className="flex flex-row md:flex-col gap-3 shrink-0 border-t md:border-t-0 md:border-l border-white/5 pt-8 md:pt-0 md:pl-10 justify-center">
+                          <button onClick={() => handleAction(leave.id, 'approved')} className="px-8 py-4 bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 font-black text-[10px] uppercase tracking-widest rounded-2xl hover:bg-emerald-500 hover:text-white transition-all shadow-2xl shadow-emerald-500/10">
+                             Authorize
                           </button>
-                          <button onClick={() => handleAction(leave.id, 'rejected')} className="flex-1 px-4 py-2 bg-red-50 text-red-700 border border-red-200 font-bold text-sm rounded-lg hover:bg-red-100 transition shadow-sm">
-                            Reject
+                          <button onClick={() => handleAction(leave.id, 'rejected')} className="px-8 py-4 bg-brand-accent/10 text-brand-accent border border-brand-accent/20 font-black text-[10px] uppercase tracking-widest rounded-2xl hover:bg-brand-accent hover:text-white transition-all shadow-2xl shadow-brand-accent/10">
+                             Deny
                           </button>
                         </div>
                      )}
@@ -159,24 +172,24 @@ export default function LeaveRequests() {
 
       {/* Action Modal */}
       {actionModal && (
-        <div className="fixed inset-0 bg-gray-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in">
-           <div className="bg-white max-w-sm w-full rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95">
-              <div className="p-5 border-b border-gray-100 bg-gray-50">
-                 <h3 className="font-bold text-gray-900 flex items-center gap-2">
-                   {actionModal.status === 'approved' ? <CheckCircle2 className="text-green-600" /> : <XCircle className="text-brand-primary" />}
-                   {actionModal.status === 'approved' ? 'Approve Leave' : 'Reject Leave'}
+        <div className="fixed inset-0 bg-[#050A14]/80 backdrop-blur-md z-[100] flex items-center justify-center p-4 animate-in fade-in duration-300">
+           <div className="bg-brand-primary max-w-md w-full rounded-[2.5rem] shadow-2xl overflow-hidden animate-in zoom-in-95 border border-white/10">
+              <div className="px-10 py-8 border-b border-white/5 bg-white/[0.02]">
+                 <h3 className="font-black text-white text-xl tracking-tight flex items-center gap-4">
+                   {actionModal.status === 'approved' ? <CheckCircle2 className="text-emerald-500" /> : <XCircle className="text-brand-accent" />}
+                   {actionModal.status === 'approved' ? 'Authorize Clearance' : 'Deny Clearance'}
                  </h3>
               </div>
-              <div className="p-5 space-y-4">
+              <div className="p-10 space-y-8">
                  <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-1">Remarks (Optional)</label>
-                    <textarea value={remarks} onChange={e => setRemarks(e.target.value)} rows={3} placeholder="Add a note for the applicant..." 
-                      className="w-full px-3 py-2 border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-brand-primary resize-none text-sm"></textarea>
+                    <label className="block text-[10px] font-black text-slate-500 mb-3 uppercase tracking-widest ml-1">Protocol Remarks (Optional)</label>
+                    <textarea value={remarks} onChange={e => setRemarks(e.target.value)} rows={3} placeholder="Add a note for the analyst..." 
+                      className="w-full px-6 py-4 border border-white/10 rounded-2xl outline-none focus:ring-2 focus:ring-brand-accent/40 bg-white/5 text-white font-bold placeholder:text-slate-600 resize-none hover:bg-white/[0.08] transition-all"></textarea>
                  </div>
-                 <div className="flex gap-3">
-                    <button onClick={() => setActionModal(null)} className="flex-1 py-2 text-gray-600 font-bold bg-gray-100 hover:bg-gray-200 rounded-lg transition">Cancel</button>
-                    <button onClick={confirmAction} className={`flex-1 py-2 text-white font-bold rounded-lg shadow-md transition ${actionModal.status === 'approved' ? 'bg-green-600 hover:bg-green-700' : 'bg-brand-primary hover:bg-red-700'}`}>
-                      Confirm
+                 <div className="flex gap-4">
+                    <button onClick={() => setActionModal(null)} className="flex-1 py-5 text-slate-400 font-black text-[10px] uppercase tracking-widest bg-white/5 hover:bg-white/10 rounded-2xl transition-all">Abort</button>
+                    <button onClick={confirmAction} className={`flex-1 py-5 text-white font-black text-[10px] uppercase tracking-widest rounded-2xl shadow-2xl transition-all ${actionModal.status === 'approved' ? 'bg-emerald-500 hover:bg-emerald-600 shadow-emerald-500/20' : 'bg-brand-accent hover:bg-[#b91c1c] shadow-brand-accent/20'}`}>
+                      Confirm Protocol
                     </button>
                  </div>
               </div>

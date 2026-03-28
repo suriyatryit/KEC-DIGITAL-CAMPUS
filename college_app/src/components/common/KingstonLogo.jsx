@@ -1,52 +1,38 @@
-import React from 'react';
+import kecMainLogo from '../../assets/kec_main_logo.png';
+import kecAccreditationLogos from '../../assets/kec_accreditation_logos.png';
 
-export const KingstonLogo = ({ className = "", iconSize = 48, textColor = "text-[#E31E24]", variant = "default" }) => {
+export const KingstonLogo = ({ className = "", iconSize = 48, textColor = "text-brand-accent", variant = "default" }) => {
   const isSmall = variant === "small";
 
   if (variant === "banner") {
     return (
-      <div className={`flex flex-col lg:flex-row items-center justify-between gap-6 w-full ${className}`}>
-        <div className="flex items-center gap-6">
-          {/* Building Icon */}
-          <div className="text-[#E31E24] shrink-0">
-            <svg width={iconSize * 1.5} height={iconSize * 1.5} viewBox="0 0 100 100" fill="currentColor">
-              {/* Roof */}
-              <polygon points="50,10 95,40 5,40" />
-              <rect x="5" y="40" width="90" height="6" />
-              {/* Columns */}
-              <rect x="15" y="50" width="12" height="30" rx="1" />
-              <rect x="35" y="50" width="12" height="30" rx="1" />
-              <rect x="55" y="50" width="12" height="30" rx="1" />
-              <rect x="75" y="50" width="12" height="30" rx="1" />
-              {/* Base */}
-              <rect x="5" y="80" width="90" height="6" rx="1" />
-              <rect x="2" y="86" width="96" height="6" rx="1" />
-              {/* Pediment circle with K */}
-              <circle cx="50" cy="28" r="7" fill="white" />
-              <text x="50" y="32" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#E31E24">K</text>
-            </svg>
+      <div className={`flex flex-col gap-10 w-full ${className}`}>
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 pb-8 border-b border-white/10">
+          <div className="flex items-center gap-8 group">
+            <img 
+              src={kecMainLogo} 
+              alt="Kingston Engineering College" 
+              className="h-32 w-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500" 
+            />
           </div>
-          {/* Text block */}
-          <div className="text-[#E31E24]">
-            <h1 className="text-2xl sm:text-4xl font-black leading-tight tracking-tight uppercase drop-shadow-sm">KINGSTON ENGINEERING COLLEGE</h1>
-            <h2 className="text-lg sm:text-2xl font-bold leading-tight opacity-90">(AN AUTONOMOUS INSTITUTION)</h2>
-            <p className="text-[11px] sm:text-xs font-semibold leading-normal mt-2 opacity-80 max-w-2xl italic text-gray-700">
-              (Approved by AICTE &amp; Council of Architecture, New Delhi, Affiliated to Anna University, Chennai,<br />
-              Accredited with &lsquo;A&rsquo; Grade by NAAC, Recognized Institution under section 2(f) &amp; 12(B) of UGC act, 1956)<br />
-              Chittoor Main Road, Vellore, Tamil Nadu - 632059.
-            </p>
+          
+          <div className="flex items-center justify-center lg:justify-end">
+            <img 
+              src={kecAccreditationLogos} 
+              alt="Accreditation Logos" 
+              className="h-16 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" 
+            />
           </div>
         </div>
         
-        {/* Accreditation Icons Placeholder (Right Side) */}
-        <div className="hidden xl:flex items-center gap-4 opacity-70 p-4 grayscale hover:grayscale-0 transition-all">
-          <div className="flex items-center gap-3">
-             <div className="w-10 h-10 rounded-full border-2 border-[#E31E24] flex items-center justify-center font-bold text-[8px] text-center p-1">NBA</div>
-             <div className="w-10 h-10 rounded-full border-2 border-[#E31E24] flex items-center justify-center font-bold text-[8px] text-center p-1">NAAC</div>
-             <div className="w-10 h-10 rounded-full border-2 border-[#E31E24] flex items-center justify-center font-bold text-[8px] text-center p-1">AICTE</div>
-             <div className="w-10 h-10 rounded-full border-2 border-[#E31E24] flex items-center justify-center font-bold text-[8px] text-center p-1">UGC</div>
-             <div className="w-10 h-10 rounded-full border-2 border-[#E31E24] flex items-center justify-center font-bold text-[8px] text-center p-1">Startup TN</div>
-          </div>
+        <div className="max-w-4xl animate-in slide-in-from-left duration-1000">
+          <h2 className="text-5xl font-black text-white leading-tight mb-6 tracking-tighter">
+            Empowering <span className="text-brand-accent italic underline decoration-brand-accent/30 underline-offset-8">Excellence</span> <br />
+            Since 2008
+          </h2>
+          <p className="text-lg text-slate-400 font-medium leading-relaxed max-w-2xl">
+            Access the Unified Academic Operating System for Kingston Engineering College. Synchronized with Institutional Nodes.
+          </p>
         </div>
       </div>
     );

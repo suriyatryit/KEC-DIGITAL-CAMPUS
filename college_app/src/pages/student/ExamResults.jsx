@@ -60,70 +60,70 @@ export default function ExamResults() {
   };
 
   return (
-    <div className="space-y-6 animate-in fade-in duration-500 max-w-5xl mx-auto">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-white p-6 rounded-2xl shadow-sm border border-gray-100 gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Exam Results</h1>
-          <p className="text-gray-500 text-sm mt-1">Semester 2 Final Results</p>
+    <div className="space-y-6 animate-in fade-in duration-700 max-w-7xl mx-auto pb-12">
+      <div className="bg-brand-primary border border-white/10 p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="absolute right-0 top-0 w-64 h-64 bg-brand-accent opacity-[0.05] rounded-full blur-[80px]" />
+        <div className="relative z-10">
+          <h1 className="text-4xl font-black text-white tracking-tight">Academic Outcome</h1>
+          <p className="text-slate-500 font-black text-[10px] mt-2 uppercase tracking-[0.3em] opacity-80">Cycle 2 Final Performance Metrics</p>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2 border border-brand-primary text-brand-primary text-sm font-medium rounded-lg hover:bg-brand-primary/5 transition">
-           <Download size={18} /> Download Marksheet
+        <button className="relative z-10 flex items-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-xl text-white text-[10px] font-black uppercase tracking-widest rounded-2xl border border-white/10 hover:bg-white/10 transition-all shadow-xl">
+           <Download size={18} className="text-brand-accent" /> Export Certificate
         </button>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="glass-panel p-6 rounded-2xl border-l-4 border-l-blue-500 flex items-center gap-4">
-           <div className="bg-blue-50 text-blue-500 p-4 rounded-full">
-             <Award size={32} />
+        <div className="glass-panel p-10 rounded-[2.5rem] border-l-4 border-l-brand-accent flex items-center gap-8 group hover:bg-white/[0.04] transition-all">
+           <div className="bg-brand-accent/10 text-brand-accent p-6 rounded-3xl border border-brand-accent/20 group-hover:scale-110 transition-transform shadow-2xl">
+             <Award size={40} />
            </div>
            <div>
-             <h3 className="text-gray-500 font-medium text-sm">Semester Grade Point Average (SGPA)</h3>
-             <p className="text-3xl font-bold text-gray-900 mt-1">{calculateSGPA()}</p>
+             <h3 className="text-slate-500 font-black text-[10px] uppercase tracking-widest mb-1">Cycle Grade Average (SGPA)</h3>
+             <p className="text-5xl font-black text-white tracking-tighter">{calculateSGPA()}</p>
            </div>
         </div>
-        <div className="glass-panel p-6 rounded-2xl border-l-4 border-l-green-500 flex items-center gap-4">
-           <div className="bg-green-50 text-green-500 p-4 rounded-full">
-             <TrendingUp size={32} />
+        <div className="glass-panel p-10 rounded-[2.5rem] border-l-4 border-l-emerald-500 flex items-center gap-8 group hover:bg-white/[0.04] transition-all">
+           <div className="bg-emerald-500/10 text-emerald-500 p-6 rounded-3xl border border-emerald-500/20 group-hover:scale-110 transition-transform shadow-2xl">
+             <TrendingUp size={40} />
            </div>
            <div>
-             <h3 className="text-gray-500 font-medium text-sm">Cumulative Grade Point Average (CGPA)</h3>
-             <p className="text-3xl font-bold text-gray-900 mt-1">8.54</p>
+             <h3 className="text-slate-500 font-black text-[10px] uppercase tracking-widest mb-1">Institutional Median (CGPA)</h3>
+             <p className="text-5xl font-black text-white tracking-tighter">8.54</p>
            </div>
         </div>
       </div>
 
-      <div className="glass-panel rounded-2xl overflow-hidden border border-gray-200">
-        <div className="p-4 border-b border-gray-100 bg-gray-50/50 flex justify-between items-center">
-           <h3 className="font-bold text-gray-700 flex items-center gap-2">
-             <BookOpen size={18} className="text-gray-400" /> Subject-wise Performance
+      <div className="glass-panel rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl">
+        <div className="p-8 border-b border-white/5 bg-white/[0.02] flex justify-between items-center">
+           <h3 className="font-black text-white text-xs uppercase tracking-[0.2em] flex items-center gap-4">
+             <BookOpen size={20} className="text-brand-accent" /> Institutional Node Performance
            </h3>
         </div>
         <div className="overflow-x-auto">
           {loading ? (
-            <div className="p-10 flex justify-center"><div className="animate-spin rounded-full h-8 w-8 border-4 border-brand-primary border-t-transparent" /></div>
+            <div className="p-20 flex justify-center"><div className="animate-spin rounded-full h-12 w-12 border-4 border-brand-accent/20 border-t-brand-accent" /></div>
           ) : (
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-white border-b border-gray-200">
-                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Subject</th>
-                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-center">Marks (100)</th>
-                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-center">Grade</th>
+                <tr className="bg-white/[0.03] border-b border-white/5">
+                  <th className="px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Institutional Hub</th>
+                  <th className="px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] text-center">Score Vector</th>
+                  <th className="px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] text-center">Grade Index</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 bg-white">
+              <tbody className="divide-y divide-white/5">
                 {results.map((result) => (
-                  <tr key={result.id} className="hover:bg-gray-50/50 transition">
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="font-bold text-gray-900">{result.subject}</div>
-                      <div className="text-xs text-gray-500 uppercase tracking-wider">{result.credits} Credits</div>
+                  <tr key={result.id} className="hover:bg-white/[0.02] transition-colors group">
+                    <td className="px-10 py-6 whitespace-nowrap">
+                      <div className="font-black text-white text-base tracking-tight">{result.subject}</div>
+                      <div className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1">{result.credits} CREDITS HUB</div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center font-bold text-gray-900">{result.marks_obtained}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center">
-                      <span className={`px-2 py-1 inline-flex text-xs leading-5 font-bold rounded border ${
-                        result.grade === 'O' ? 'bg-green-50 text-green-700 border-green-200' :
-                        result.grade === 'A' ? 'bg-blue-50 text-blue-700 border-blue-200' :
-                        result.grade === 'B+' || result.grade === 'B' ? 'bg-yellow-50 text-yellow-700 border-yellow-200' :
-                        'bg-red-50 text-red-700 border-red-200'
+                    <td className="px-10 py-6 whitespace-nowrap text-center font-black text-white text-xl tracking-tighter">{result.marks_obtained}</td>
+                    <td className="px-10 py-6 whitespace-nowrap text-center">
+                      <span className={`px-4 py-2 inline-flex text-[10px] font-black rounded-lg border uppercase tracking-widest ${
+                        result.grade === 'O' ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20' :
+                        result.grade === 'A' ? 'bg-brand-accent/10 text-brand-accent border-brand-accent/20' :
+                        'bg-slate-800 text-slate-400 border-white/10'
                       }`}>
                         {result.grade}
                       </span>

@@ -33,50 +33,51 @@ export default function FacultyDashboard() {
 
   const profName = (user?.name || user?.username || '').split(' ')[0] || 'Faculty';
   return (
-    <div className="space-y-6 animate-in fade-in duration-500">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-brand-dark p-8 rounded-2xl shadow-lg relative overflow-hidden">
-        {/* Background Graphic */}
-        <div className="absolute right-0 top-0 w-64 h-64 bg-white opacity-5 rounded-full transform translate-x-1/2 -translate-y-1/2" />
+    <div className="space-y-6 animate-in fade-in duration-700 max-w-7xl mx-auto pb-12">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-brand-primary border border-white/10 p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
+        <div className="absolute right-0 top-0 w-96 h-96 bg-brand-accent opacity-[0.05] rounded-full transform translate-x-1/4 -translate-y-1/4 blur-[100px]" />
         
         <div className="relative z-10">
-          <h1 className="text-3xl font-bold text-white mb-2">Welcome back, {profName}</h1>
-          <p className="text-gray-300">You have {schedule.length} classes scheduled for today.</p>
+          <h1 className="text-4xl font-black text-white mb-2 tracking-tight">Welcome back, {profName}</h1>
+          <p className="text-slate-400 font-black text-xs uppercase tracking-[0.2em] opacity-80">Institutional Node • {schedule.length} active sessions today</p>
         </div>
-        <div className="relative z-10 mt-6 md:mt-0 flex gap-4">
-           <div className="bg-white/10 backdrop-blur text-white px-6 py-3 rounded-xl border border-white/20 text-center">
-             <div className="text-xs text-brand-primary-light uppercase tracking-wider font-bold mb-1">Status</div>
-             <div className="text-lg font-bold flex items-center gap-2"><CheckCircle2 size={18} /> Online</div>
+        <div className="relative z-10 mt-8 md:mt-0 flex gap-4">
+           <div className="bg-white/5 backdrop-blur-xl text-white px-8 py-4 rounded-2xl border border-white/10 text-center shadow-xl flex items-center gap-3">
+             <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+             <div className="text-[10px] font-black uppercase tracking-widest">LIVE STATUS: ONLINE</div>
            </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
-          <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-            <Clock className="text-brand-primary" /> Today's Schedule
+          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] flex items-center gap-3 ml-2">
+            <Clock size={16} className="text-brand-accent" /> Strategic Schedule
           </h2>
           
           <div className="space-y-4">
             {schedule.length > 0 ? schedule.map((cls, idx) => (
-              <div key={idx} className="glass-panel p-6 rounded-2xl border-l-4 border-l-brand-primary hover:shadow-md transition relative overflow-hidden group">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-gray-100 text-brand-dark font-bold text-sm px-3 py-2 rounded-lg text-center min-w-[120px]">
-                      {cls.time_slot}
+              <div key={idx} className="glass-panel p-8 rounded-[2rem] border border-white/5 hover:border-brand-accent/30 transition-all bg-white/[0.02] group/item hover:bg-white/[0.04] shadow-sm relative overflow-hidden">
+                <div className="absolute right-0 top-0 w-32 h-32 bg-brand-accent/5 rounded-full blur-2xl -mr-16 -mt-16 group-hover/item:scale-125 transition-transform"></div>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 relative z-10">
+                  <div className="flex items-start gap-6">
+                    <div className="bg-brand-primary/50 text-white font-black text-xs px-5 py-3 rounded-2xl text-center min-w-[140px] border border-white/10">
+                      <span className="tracking-widest uppercase opacity-60 text-[9px] block mb-1">Session Block</span>
+                      <span className="text-sm tracking-tighter">{cls.time_slot}</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900">{cls.subject}</h3>
-                      <p className="text-sm text-gray-500 flex items-center gap-2 mt-1">
-                        <span className="flex items-center gap-1 font-medium bg-gray-100 px-2 rounded"><Users size={14}/> {cls.semester} {cls.section}</span>
+                      <h3 className="text-xl font-black text-white tracking-tight">{cls.subject}</h3>
+                      <div className="flex items-center gap-3 text-[10px] text-slate-400 font-bold mt-2 uppercase tracking-widest">
+                        <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded border border-white/10"><Users size={14} className="text-brand-accent"/> {cls.semester} {cls.section}</span>
                         <span>•</span>
-                        <span>Main Block</span>
-                      </p>
+                        <span>Institutional Hub</span>
+                      </div>
                     </div>
                   </div>
                   
                   <div className="flex flex-col items-end gap-2">
-                    <span className="px-3 py-1 text-xs font-bold rounded-full bg-gray-100 text-gray-600">
-                      Upcoming
+                    <span className="px-4 py-2 text-[10px] font-black rounded-lg bg-brand-accent/10 text-brand-accent border border-brand-accent/20 uppercase tracking-widest">
+                      ACTIVE NODE
                     </span>
                   </div>
                 </div>
@@ -88,23 +89,23 @@ export default function FacultyDashboard() {
         </div>
 
         <div className="space-y-6">
-          <h2 className="text-xl font-bold text-gray-900">Task Overview</h2>
-          <div className="glass-panel p-6 rounded-2xl space-y-4">
+          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] ml-2">Operational Tasks</h2>
+          <div className="glass-panel p-8 rounded-[2.5rem] space-y-6">
              {pendingTasks.marks && (
-               <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100">
-                 <div className="bg-orange-100 text-orange-600 p-2 rounded-lg"><AlertCircle size={20} /></div>
+               <div className="flex items-center gap-4 p-5 bg-brand-accent/5 rounded-2xl border border-brand-accent/10 group hover:bg-brand-accent/10 transition-colors">
+                 <div className="bg-brand-accent text-white p-3 rounded-xl shadow-lg shadow-brand-accent/20"><AlertCircle size={20} /></div>
                  <div>
-                    <h4 className="font-bold text-sm text-gray-900">Marks Entry Active</h4>
-                    <p className="text-xs text-gray-500">Mid-Term Assessment</p>
+                    <h4 className="font-black text-sm text-white tracking-tight">Audit Entry Active</h4>
+                    <p className="text-[10px] text-brand-accent font-black uppercase tracking-widest mt-1">Institutional Assessment</p>
                  </div>
                </div>
              )}
              
-             <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100">
-               <div className="bg-blue-100 text-blue-600 p-2 rounded-lg"><Clock size={20} /></div>
+             <div className="flex items-center gap-4 p-5 bg-white/5 rounded-2xl border border-white/5 group hover:bg-white/10 transition-colors">
+               <div className="bg-slate-700 text-white p-3 rounded-xl"><Clock size={20} /></div>
                <div>
-                  <h4 className="font-bold text-sm text-gray-900">{pendingTasks.leaves} Leave Requests</h4>
-                  <p className="text-xs text-gray-500">Pending Approval</p>
+                  <h4 className="font-black text-sm text-white tracking-tight">{pendingTasks.leaves} Registry Requests</h4>
+                  <p className="text-[10px] text-slate-500 font-black uppercase tracking-widest mt-1">Awaiting Clearance</p>
                </div>
              </div>
           </div>
